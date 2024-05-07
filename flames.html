@@ -2,33 +2,327 @@
     <head>
         <title>Flames</title>
         <style>
+            :root {
+                --c1:#E850AA;
+                --c2:#FFFFFF;
+                --c3:#9BA9B4;
+                --c4:#3A4161;
+                --c5:#1086e8;
+                --c6:#040404;
+                /* background: var(--c2); */
+            }
+            body {
+              background: url(./back.avif) no-repeat;
+              background-color: var(--c6);
+              /* background-size: cover; */
+            }
             .strike {
                 text-decoration: line-through;
             }
+            /* .header-font {
+                color: var(--c1);
+                background: var(--c2);
+                padding: 15px 32px;
+                border-radius: 10px;
+            } */
+            .container {
+                display: flex;
+                justify-content: center;
+                height: 100%;
+                /* align-items: center; */
+                flex-direction: column;
+                font-size: 3.5em;
+                /* background: var(--c3); */
+                font-family: 'Arial Verdana Helvetica';
+            }
+            #flame {
+                display: block;
+            }
+            /* #flamesTxt {
+                display: none;
+            } */
+            input {
+              padding: 5% 0% 5% 5%;
+              margin: 5%;
+              width: 90%;
+              border-radius: 20px 10px;
+              font-size: 100%;
+              opacity: 0.8;
+            }
+            .bottom-row {
+                display: flex;
+                justify-content: center;
+            }
+            /* #flamesTxt-f #flamesTxt-l #flamesTxt-a #flamesTxt-m #flamesTxt-e #flamesTxt-s {
+                display: none;
+            } */
+            .button {
+                background-color: var(--c1); /* Green */
+                border: 2px solid;
+                border-radius: 10px;
+                color: var(--c2);
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+                border-radius: 20px 10px;
+                padding: 5%;
+                margin: 2%;
+                font-size: 65%;
+                }
+                .button3 {
+                    color: var(--c2);
+                    background-color: var(--c5);
+                }
+                .button1 {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                }
+
+                .button2:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                }
+/* header design */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.header-font {
+  color: var(--c1);
+  background: var(--c6);
+  padding: 15px 32px;
+  border-radius: 10px;
+  text-align:center;
+  border:5px solid var(--c5);
+  animation: border-flicker 2s linear infinite;
+  padding: 7% 2%;
+}
+
+span {
+  color:var(--c1);
+  font-family: 'Raleway', sans-serif;
+  /* font-size:64px; */
+  letter-spacing:20px;
+  animation: text-flicker 3s linear infinite;
+}
+
+#offset {
+  animation: letter-flicker 2s linear infinite;
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  
+  2% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  8% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  9% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  12% {
+    opacity:0.1;
+    text-shadow: 0px 0px rgba(242, 22, 22, 1);
+  }
+  20% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  25% {
+    opacity:0.3;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  30% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  
+  70% {
+    opacity:0.7;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  
+  72% {
+    opacity:0.2;
+    text-shadow:0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  
+  77% {
+    opacity:.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  100% {
+    opacity:.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  2% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  4% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  
+  8% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  70% {
+    opacity:0.7;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  100% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+}
+
+@keyframes letter-flicker {
+  0% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  2% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  4% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  
+  
+  19% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  21% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  23% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  
+  80% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  83% {
+    opacity:0.4;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  87% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+}
         </style>
     </head>
     <body>
-        <div>
-            <span id="f">F</span>
-            <span id="l">l</span>
-            <span id="a">a<span>
-            <span id="m">m<span>
-            <span id="e">e<span>
-            <span id="s">s<span>
-        </div>
-        <div>
-            <div>
+        <div class="container">
+            <div class="item header-font" id="flame">
+                <span id="f">F</span>
+                <span id="l">L</span>
+                <span id="a">A<span>
+                <span id="m">M<span>
+                <span id="e">E<span>
+                <span id="s">S<span>
+            </div>
+            <div class="item header-font" id="flamesTxt">
+                <span id="flamesTxt-f" style="display: none;">
+                  <span>F</span>
+                  <span>R</span>
+                  <span>I</span>
+                  <span>N</span>
+                  <span>D</span>
+                  <span>S</span>
+                </span>
+                <span  id="flamesTxt-l" style="display: none;">
+                  <span>L</span>
+                  <span>O</span>
+                  <span>V</span>
+                  <span>E</span>
+                </span>
+                <span  id="flamesTxt-a" style="display: none;">
+                  <span>A</span>
+                  <span>F</span>
+                  <span>F</span>
+                  <span>E</span>
+                  <span>C</span>
+                  <span>I</span>
+                  <span>O</span>
+                  <span>N</span>
+                </span>
+                <span id="flamesTxt-m" style="display: none;">
+                  <span>M</span>
+                  <span>A</span>
+                  <span>R</span>
+                  <span>R</span>
+                  <span>I</span>
+                  <span>A</span>
+                  <span>G</span>
+                  <span>E</span>
+                </span>
+                <span id="flamesTxt-e" style="display: none;">
+                  <span>E</span>
+                  <span>N</span>
+                  <span>E</span>
+                  <span>M</span>
+                  <span>Y</span>
+                </span>
+                <span id="flamesTxt-s" style="display: none;">
+                  <span>S</span>
+                  <span>I</span>
+                  <span>S</span>
+                  <span>T</span>
+                  <span>S</span>
+                  <span>R</span>
+                </span>
+            </div>
+            <div class="item">
                 <div>
-                    <input type="text" placeholder="Name of Boy" id="boyName"/>
-                </div>
-                <div>
-                    <input type="text" placeholder="Name of Girl" id="girlName"/>
-                </div>
-                <div>
-                    <button onclick="getFlameCount();">Find</button>
-                </div>
-                <div id="flamesTxt">
-
+                    <div>
+                        <input type="text" placeholder="Name of Boy" id="boyName"/>
+                    <!-- </div>
+                    <div> -->
+                        <input type="text" placeholder="Name of Girl" id="girlName"/>
+                    </div>
+                    <div class="bottom-row">
+                        <button onclick="reset();" class="button button1 button3">RESET</button>
+                        <button onclick="getFlameCount();" class="button button1">FIND</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,9 +335,12 @@
         let bNameRm = '';
         let flamable = 0;
         const getFlameCount = (char, status) => {
-            
+            if (document.getElementById('flamesTxt') && document.getElementById('flamesTxt')?.style['display'] == 'block') {
+              reset();
+            }
             let bName = document.getElementById('boyName')?.value?.toLowerCase();
             let gName = document.getElementById('girlName')?.value?.toLowerCase();
+            if (bName?.trim()?.length > 3 && gName?.trim()?.length > 3) {
             let curStatus = bName.localeCompare(gName);
             
                 if (char !== undefined) {
@@ -55,7 +352,7 @@
                 }
                     if (bName.length == ckLtr) {
                         flamable=gNameRm.concat(bNameRm).length;
-                        console.log("Count between :",flamable)
+                        // console.log("Count between :",flamable)
                         flames(flamable, Game.split(''),'');
                         return false
                     }
@@ -66,6 +363,9 @@
                     } else {
                         return false
                     }
+          } else {
+            alert('Boy and Girl Name must contain more than 4 characters')
+          }
         }
         const flames = (Fcount, arr, startChar) => {
             
@@ -85,54 +385,56 @@
                     let startIndx=game.indexOf(startChar);
                     game=game.slice(startIndx);
                 }
-                console.log('Text Aft:', game)
+                // console.log('Text Aft:', game)
                 let nextChar = game.charAt(Fcount);
                 let rmChar = game.charAt(Fcount-1);
                 if (game.length < Fcount && startChar !== '') {
-                    console.log('startChar',startChar)
+                    // console.log('startChar',startChar)
                     strikeLtr(startChar)
                     let rmAr = arr.filter(d=>d!=startChar);
                     flames(Fcount, rmAr, nextChar);
                     return false;
                 }
-                console.log('arr',arr, 'remove',rmChar)
+                if (arr.length == 2 && rmChar == '' && startChar !== '') {
+                  rmChar = startChar;
+                }
+                // console.log('arr',arr, 'remove',rmChar)
                 strikeLtr(rmChar)
                 let rmAr = arr.filter(d=>d!=rmChar);
                 Game = rmAr.join('');
-                console.log('Removed Char', rmChar)
-                console.log("Remaing", rmAr)
-                console.log("Start from :",nextChar)
+                // console.log('Removed Char', rmChar)
+                // console.log("Remaing", rmAr)
+                // console.log("Start from :",nextChar)
                 if (rmAr.length == 1) {
                     // console.log("Final",rmAr)
-                    setFlames(rmAr[0])
+                    setFlames(rmAr[rmAr.length-1])
                     return false;
                 }
                 if (nextChar !== '' && (rmAr.length > 1)) {
-                    console.log('--------------------')
+                    // console.log('--------------------')
                     flames(Fcount, rmAr, nextChar);
                 }
             // }
         }
         const setFlames = (w) => {
-            let txt='';
-            if (w=='f') {
-                txt = 'Friends';
-            } else if (w=='l') {
-                txt = 'Love';
-            }else if (w=='a') {
-                txt = 'Affection';
-            }else if (w=='m') {
-                txt = 'Marriage';
-            }else if (w=='e') {
-                txt = 'Enemy';
-            }else if (w=='s') {
-                txt = 'Sister';
+            document.getElementById('flamesTxt-f').style['display'] = 'none';
+            document.getElementById('flamesTxt-l').style['display'] = 'none';
+            document.getElementById('flamesTxt-a').style['display'] = 'none';
+            document.getElementById('flamesTxt-m').style['display'] = 'none';
+            document.getElementById('flamesTxt-e').style['display'] ='none';
+            document.getElementById('flamesTxt-s').style['display'] = 'none';
+            if (w && document.getElementById('flamesTxt-'+w))
+            {
+              document.getElementById('flamesTxt-'+w).style['display'] = '';
+              document.getElementById('flamesTxt').style['display'] = 'block';
+              document.getElementById('boyName').value = ''
+              document.getElementById('girlName').value = ''
             }
-            document.getElementById('flamesTxt').innerHTML = txt;
-            reset();
         }
         const strikeLtr = (w) => {
-            document.getElementById(w).style.textDecoration = 'line-through'
+            if (w && document.getElementById(w)) {
+              document.getElementById(w).style.textDecoration = 'line-through'
+            }
         }
         const reset = () => {
             Game = 'flames'
@@ -141,6 +443,17 @@
             gNameRm = '';
             bNameRm = '';
             flamable = 0;
+            document.getElementById('flamesTxt').style.display = 'none';
+            document.getElementById('flame').style.display = '';
+            document.getElementById('f').style.textDecoration = 'none'
+            document.getElementById('l').style.textDecoration = 'none'
+            document.getElementById('a').style.textDecoration = 'none'
+            document.getElementById('m').style.textDecoration = 'none'
+            document.getElementById('e').style.textDecoration = 'none'
+            document.getElementById('s').style.textDecoration = 'none'
+            document.getElementById('boyName').value = ''
+            document.getElementById('girlName').value = ''
         }
+        reset();
     </script>
 </html>
