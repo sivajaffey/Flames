@@ -8,9 +8,10 @@
     /* background: var(--c2); */
 }
 body {
-  background: url(assets/image/background.jpg) no-repeat;
+  background: url(../image/background.jpg) no-repeat;
   background-color: var(--c6);
   background-size: cover;
+  touch-action: manipulation;
 }
 .strike {
     text-decoration: line-through;

@@ -6,12 +6,16 @@ let bNameRm = '';
 let flamable = 0;
 const getFlameCount = (char, status) => {
     if (document.getElementById('flamesTxt') && document.getElementById('flamesTxt')?.style['display'] == 'block') {
-      reset();
+      reset(1);
     }
-    let bName = document.getElementById('boyName')?.value?.toLowerCase();
-    let gName = document.getElementById('girlName')?.value?.toLowerCase();
-    if (bName?.trim()?.length > 3 && gName?.trim()?.length > 3) {
-    let curStatus = bName.localeCompare(gName);
+    // console.log(document.getElementById('boyName').value == '')
+    let bName = document.getElementById('boyName')?.value?.toLowerCase()?.trim()?.toString();
+    let gName = document.getElementById('girlName')?.value?.toLowerCase()?.trim()?.toString();
+
+
+    console.log(bName?.trim()?.toString(), gName?.trim().toString())
+    if (bName?.trim()?.toString()?.length > 3 && gName?.trim().toString()?.length > 3) {
+    // let curStatus = bName.localeCompare(gName);
     
         if (char !== undefined) {
             let index = gName.indexOf(char)
@@ -39,8 +43,9 @@ const getFlameCount = (char, status) => {
 }
 const flames = (Fcount, arr, startChar) => {
     
-    let getVal = Math.round(Fcount / arr.length);
-    let game = arr.join('');
+    // let getVal = Math.round(Fcount / arr.length);
+    // console.log(arr)
+    let game = arr?.join('');
     if (arr.length == 1) {
         // console.log("Final",arr)
         setFlames(arr[0])
@@ -61,6 +66,7 @@ const flames = (Fcount, arr, startChar) => {
         if (game.length < Fcount && startChar !== '') {
             // console.log('startChar',startChar)
             strikeLtr(startChar)
+            // console.log(arr)
             let rmAr = arr.filter(d=>d!=startChar);
             flames(Fcount, rmAr, nextChar);
             return false;
@@ -70,7 +76,8 @@ const flames = (Fcount, arr, startChar) => {
         }
         // console.log('arr',arr, 'remove',rmChar)
         strikeLtr(rmChar)
-        let rmAr = arr.filter(d=>d!=rmChar);
+        // console.log(arr)
+        let rmAr = arr?.filter(d=>d!=rmChar);
         Game = rmAr.join('');
         // console.log('Removed Char', rmChar)
         // console.log("Remaing", rmAr)
@@ -108,7 +115,7 @@ const strikeLtr = (w) => {
       document.getElementById(w).style.textDecoration = 'line-through'
     }
 }
-const reset = () => {
+const reset = (val) => {
     Game = 'flames'
     ckLtr = 0;
     remainingTxt = '';
@@ -123,7 +130,9 @@ const reset = () => {
     document.getElementById('m').style.textDecoration = 'none'
     document.getElementById('e').style.textDecoration = 'none'
     document.getElementById('s').style.textDecoration = 'none'
-    document.getElementById('boyName').value = ''
-    document.getElementById('girlName').value = ''
+    if (val !== 1) {
+        document.getElementById('boyName').value = ''
+        document.getElementById('girlName').value = ''
+    }
 }
-reset();
+reset(0);
