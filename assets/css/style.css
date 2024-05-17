@@ -12,6 +12,7 @@ body {
   background-color: var(--c6);
   background-size: cover;
   touch-action: manipulation;
+  font-size: xx-small !important; 
 }
 .strike {
     text-decoration: line-through;
@@ -28,7 +29,8 @@ body {
     height: 100%;
     /* align-items: center; */
     flex-direction: column;
-    font-size: 3.5em;
+    /* font-size: 3.5em; */
+    font-size: xx-large;
     /* background: var(--c3); */
     font-family: 'Arial Verdana Helvetica';
 }
@@ -95,12 +97,13 @@ text-align:center;
 border:5px solid var(--c5);
 animation: border-flicker 2s linear infinite;
 padding: 7% 2%;
+font-size: smaller;
 }
 
 span {
 color:var(--c1);
 font-family: 'Raleway', sans-serif;
-/* font-size:64px; */
+/* font-size:64px; */   
 letter-spacing:20px;
 animation: text-flicker 3s linear infinite;
 }
