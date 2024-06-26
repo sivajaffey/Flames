@@ -1,107 +1,13 @@
-<html>
-    <head>
-        <title>Flames</title>
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="icon" type="image/x-icon" href="assets/image/logo.png">
-        <audio id="sound-f">
-          <source src="assets/sounds/f.mp3" type="audio/mp3">
-        </audio>
-        <audio id="sound-l">
-          <source src="assets/sounds/l.mp3" type="audio/mp3">
-        </audio>
-        <audio id="sound-a">
-          <source src="assets/sounds/l.mp3" type="audio/mp3">
-        </audio>
-        <audio id="sound-m">
-          <source src="assets/sounds/m.wav" type="audio/wav">
-        </audio>
-        <audio id="sound-e">
-          <source src="assets/sounds/e.wav" type="audio/wav">
-        </audio>
-        <audio id="sound-s">
-          <source src="assets/sounds/s.mp3" type="audio/mp3">
-        </audio>
-    </head>
-     
-    <body>
-        <div class="container">
-            <div class="item header-font" id="flame">
-                <span id="f">F</span>
-                <span id="l">L</span>
-                <span id="a">A<span>
-                <span id="m">M<span>
-                <span id="e">E<span>
-                <span id="s">S<span>
-            </div>
-            <div class="item header-font" id="flamesTxt">
-                <span id="flamesTxt-f" style="display: none;">
-                  <span>F</span>
-                  <span>R</span>
-                  <span>I</span>
-                  <span>E</span>
-                  <span>N</span>
-                  <span>D</span>
-                  <span>S</span>
-                </span>
-                <span  id="flamesTxt-l" style="display: none;">
-                  <span>L</span>
-                  <span>O</span>
-                  <span>V</span>
-                  <span>E</span>
-                </span>
-                <span  id="flamesTxt-a" style="display: none;">
-                  <span>A</span>
-                  <span>F</span>
-                  <span>F</span>
-                  <span>E</span>
-                  <span>C</span>
-                  <span>T</span>
-                  <span>I</span>
-                  <span>O</span>
-                  <span>N</span>
-                </span>
-                <span id="flamesTxt-m" style="display: none;">
-                  <span>M</span>
-                  <span>A</span>
-                  <span>R</span>
-                  <span>R</span>
-                  <span>I</span>
-                  <span>A</span>
-                  <span>G</span>
-                  <span>E</span>
-                </span>
-                <span id="flamesTxt-e" style="display: none;">
-                  <span>E</span>
-                  <span>N</span>
-                  <span>E</span>
-                  <span>M</span>
-                  <span>Y</span>
-                </span>
-                <span id="flamesTxt-s" style="display: none;">
-                  <span>S</span>
-                  <span>I</span>
-                  <span>S</span>
-                  <span>T</span>
-                  <span>E</span>
-                  <span>R</span>
-                </span>
-            </div>
-            <div class="item">
-                <div>
-                    <div>
-                        <input type="text" placeholder="Name of Boy" id="boyName"/>
-                    <!-- </div>
-                    <div> -->
-                        <input type="text" placeholder="Name of Girl" id="girlName"/>
-                    </div>
-                    <div class="bottom-row">
-                        <button onclick="reset();" class="button button1 button3">RESET</button>
-                        <button onclick="getFlameCount();" class="button button1">FIND</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-   
-    <script src="assets/js/script.js"></script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flme</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
