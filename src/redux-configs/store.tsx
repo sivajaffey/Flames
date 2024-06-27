@@ -6,40 +6,100 @@ const counterSlice = createSlice({
     bname:'',
     gname:'',
     lang:'en',
-    flames:''
+    flames:'',
+    page:0
   },
   reducers: {
     clearData:(state)=>{
-      state.gname=state.bname = ''
+      state.gname= '';
+      state.bname = '';
+      state.flames='';
+      state.page = 0;
+      Game = "flames";
     },
     setLang:(state,action)=>{
       state.lang = action.payload;
     },
     setFlames: (state,action)=>{
+      console.log(action)
       state.flames = action.payload;
     },
     submit: (state,action) =>{
-      localStorage?.clear();
-      state.bname = action.payload.bname?.trim();
-      state.gname = action.payload.gname?.trim();
+      let bname = action.payload.bname?.trim();
+      let gname = action.payload.gname?.trim();
+          state.bname = action.payload.bname?.trim();
+          state.gname = action.payload.gname?.trim();
       // removing space in both names
-      let b = state?.bname?.replace(' ','');
-      let g = state?.gname?.replace(' ','');
+      let b = bname?.replace(' ','');
+      let g = gname?.replace(' ','');
       // remove common charectors from both
-      state?.bname?.replace(' ','')?.split('')?.map((d:string,i:number)=>{
-          g=g.replace(state?.bname[i],'')
+      bname?.replace(' ','')?.split('')?.map((d:string,i:number)=>{
+          g=g.replace(bname[i],'')
       });
-      state?.gname?.replace(' ','').split('')?.map((d:string,i:number)=>{
-        b=b.replace(state?.gname[i],'')
+      gname?.replace(' ','').split('')?.map((d:string,i:number)=>{
+        b=b.replace(gname[i],'')
       });
       const aftRemoval = [b,g]?.join('')?.trim();
+          const flames = (Fcount, arr, startChar) => {
+      
+            let game = arr?.join('');
+            if (arr.length == 1) {
+              console.log('flames', arr[0])
+                // setFlames(arr[0])
+              state.flames = arr[0];
+                return false;
+            }
+
+                for(let i=0; i<arr.length;i++) {
+                    game += game
+                }
+
+                if (startChar !== '') {
+                    let startIndx=game.indexOf(startChar);
+                    game=game.slice(startIndx);
+                }
+                let nextChar = game.charAt(Fcount);
+                let rmChar = game.charAt(Fcount-1);
+                if (game.length < Fcount && startChar !== '') {
+                    // strikeLtr(startChar)
+                    let rmAr = arr.filter(d=>d!=startChar);
+                    // if (rmAr.length == 2) {
+                    //   let nextInd = Game.indexOf(startChar)
+                    //   startChar = rmAr[nextInd]
+                    //   rmAr = rmAr.filter(d=>d!=startChar);
+                    // }
+                    // console.log(game, Fcount, rmAr, startChar)
+                    flames(Fcount, rmAr, nextChar);
+                    return false;
+                }
+                if (arr.length == 2 && rmChar == '' && startChar !== '') {
+                  rmChar = startChar;
+                }
+                // strikeLtr(rmChar)
+                let rmAr = arr?.filter((d)=>d!=rmChar);
+                Game = rmAr?.join('');
+
+                if (rmAr.length == 1) {
+                    // setFlames(rmAr[rmAr.length-1])
+                    // console.log(rmAr)
+                    console.log('flames',rmAr[rmAr?.length-1])
+                    // setFlames(rmAr[rmAr?.length-1])
+                    state.flames = rmAr[rmAr?.length-1]
+                    return false;
+                }
+                if (nextChar !== '' && (rmAr.length > 1)) {
+                    flames(Fcount, rmAr, nextChar);
+                }
+          }
+
       if (aftRemoval !== '') {
+        console.log(aftRemoval)
             // running flames function
             flames(aftRemoval.length, Game.split(''),'');
         } else {
-          localStorage.setItem('flames','f')
-            // setFlames('f') // setting default if both names same charectors with same length
+            setFlames('f') // setting default if both names same charectors with same length
         }
+        state.page = 1;
       }
   }
 })
@@ -58,56 +118,3 @@ export let state: { bname: string; gname: string; };
 //     state = store.getState();
 // })
 
-export const flames = (Fcount, arr, startChar) => {
-  
-  let game = arr?.join('');
-  if (arr.length == 1) {
-    console.log('flames', arr[0])
-      // setFlames(arr[0])
-      console.log(arr[0])
-      // setFlames(arr[0])
-      localStorage.setItem('flames',arr[0])
-      return false;
-  }
-
-      for(let i=0; i<arr.length;i++) {
-          game += game
-      }
-
-      if (startChar !== '') {
-          let startIndx=game.indexOf(startChar);
-          game=game.slice(startIndx);
-      }
-      let nextChar = game.charAt(Fcount);
-      let rmChar = game.charAt(Fcount-1);
-      if (game.length < Fcount && startChar !== '') {
-          // strikeLtr(startChar)
-          let rmAr = arr.filter(d=>d!=startChar);
-          if (rmAr.length == 2) {
-            let nextInd = Game.indexOf(startChar)
-            startChar = rmAr[nextInd]
-            rmAr = rmAr.filter(d=>d!=startChar);
-          }
-          console.log(game, Fcount, rmAr, startChar)
-          flames(Fcount, rmAr, nextChar);
-          return false;
-      }
-      if (arr.length == 2 && rmChar == '' && startChar !== '') {
-        rmChar = startChar;
-      }
-      // strikeLtr(rmChar)
-      let rmAr = arr?.filter((d)=>d!=rmChar);
-      Game = rmAr.join('');
-
-      if (rmAr.length == 1) {
-          // setFlames(rmAr[rmAr.length-1])
-          console.log(rmAr)
-          console.log('flames',rmAr[rmAr.length-1])
-          // setFlames(rmAr[rmAr.length-1])
-          localStorage.setItem('flames',rmAr[rmAr.length-1])
-          return false;
-      }
-      if (nextChar !== '' && (rmAr.length > 1)) {
-          flames(Fcount, rmAr, nextChar);
-      }
-}

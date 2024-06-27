@@ -2,7 +2,6 @@
 import { constant } from "../redux-configs/constant"
 import { setLang } from '../redux-configs/store';
 import Toolbar from '@mui/material/Toolbar';
-// import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import AppBar from '@mui/material/AppBar';

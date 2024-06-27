@@ -1,7 +1,3 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { constant } from "../redux-configs/constant"
-// import { setLang } from '../redux-configs/store';
-
 import { useDispatch, useSelector } from "react-redux";
 import { constant, playSounds } from "../redux-configs/constant";
 import Header from '../components/header';
@@ -14,14 +10,9 @@ function Result() {
     const dispatch = useDispatch();
     const state:any = useSelector((state)=>state);
     useEffect(()=>{
-        if (localStorage && localStorage?.getItem('flames')) {
-            dispatch(setFlames(localStorage?.getItem('flames')))
-            // setTimeout(()=>{
-            //     if (state.flames !== '') {
-            //         playSounds(state.flames);
-            //     }
-            // },2000)
-           
+        console.log(state?.flames)
+        if (state?.flames !== '') {
+            playSounds(state?.flames)
         }
     },[])
     return (

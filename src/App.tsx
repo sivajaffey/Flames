@@ -9,8 +9,8 @@ const state:any = useSelector((state)=>state);
   return (
     <>
       <Container fixed>
-          {(state.bname == '' && state.gname  == '') && <Form className="Form"/>}
-          {(state.bname !== '' && state.gname  !== '') && <Result className="Form"/>}
+          {(state.page == 0) && <Form className="Form"/>}
+          {(state.page == 1) && <Result className="Form"/>}
       </Container>
     </>
   )

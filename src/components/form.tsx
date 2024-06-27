@@ -2,22 +2,7 @@ import { submit } from '../redux-configs/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { constant, clickSound } from '../redux-configs/constant';
-
-
 import TextField from '@mui/material/TextField';
-// import Card from '@mui/material/Card';
-// import Box from '@mui/material/Box';
-// import Grid from '@mui/material/Grid';
-// import Divider from '@mui/material/Divider';
-// import CardContent from '@mui/material/CardContent';
-// import { CardActionArea } from '@mui/material';
-// import ManIcon from '@mui/icons-material/Man';
-// import WomanIcon from '@mui/icons-material/Woman';
-// import List from '@mui/material/List';
-// import ListItem from '@mui/material/ListItem';
-// import * as React from 'react';
-// import Typography from '@mui/material/Typography';
-// import ListItemText from '@mui/material/ListItemText';
 import Container from '@mui/material/Container';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -30,8 +15,16 @@ const Form = () => {
   const state:any = useSelector(state=>state);
   const submitNames = () => {
     clickSound();
-    if (gname !== '' && bname !== '') {
-      dispatch(submit({'gname':gname,'bname':bname, 'dispatch':dispatch}));
+    if (gname.trim().length > 4 && gname.trim().length < 21 && 
+          gname.trim().length > 4 && gname.trim().length) {
+            if (gname?.trim() !== '' && bname?.trim() !== '') {
+              // let gname1 = gname?.replace(/[&\/\\#, +()$~%.@!%^&*_+='":*?<>{}]/g, '');
+              // let bname1 = bname?.replace(/[&\/\\#, +()$~%.@!%^&*_+='":*?<>{}]/g, '');
+              // console.log(gname1,bname1)
+              dispatch(submit({'gname':gname?.trim(),'bname':bname?.trim()}));
+            }
+    } else {
+      alert(constant['lang'][state.lang].error)
     }
   }
     return (
@@ -47,17 +40,6 @@ const Form = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField autoComplete='off' id="outlined-basic" label={constant['lang'][state.lang].gname} variant="outlined"  type='text' placeholder={constant['lang'][state.lang].gnamePlc} onKeyUp={(e)=> setGname(e.target?.value)}/>
-              </Grid>
-              <Grid item xs={12}>
-                {/* <div>
-                  Loading...
-                </div>
-                <div>
-                    <span ><img className={'loading-animation'} src={'../src/assets/img/b1.jpg'} height={20} width={20}/></span>
-                    <span><img className={'loading-animation'} src='../../src/assets/img/b3.jpg' height={20} width={20}/></span>
-                    <span><img className={'loading-animation'} src='../../src/assets/img/b4.jpg' height={20} width={20}/></span>
-                    <span><img className={'loading-animation'} src='../../src/assets/img/b2.jpg' height={20} width={20}/></span>
-                </div> */}
               </Grid>
             </Grid>
           <Footer submit={()=>submitNames()} inputs={{'gname':gname, 'bname':bname}}/>

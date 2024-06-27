@@ -8,7 +8,8 @@ export const constant:any = {
                 gname:"Girl name",
                 gnamePlc:"Enter girl name..",
                 submitBtn:"Find Match",
-                goBack:"Go Back"
+                goBack:"Go Back",
+                error:'Please enter minimum 4 character max of 20 character'
             },
             'fr' : {
                 title:"Flames",
@@ -18,7 +19,8 @@ export const constant:any = {
                 gname:"Nom de fille",
                 gnamePlc:"Entrez le nom de la fille..",
                 submitBtn:"Trouver la correspondance",
-                goBack:"Retourner"
+                goBack:"Retourner",
+                error:'Veuillez saisir au minimum 4 caractères et au maximum 20 caractères.'
             },
             'span':{
                 title:"Flames",
@@ -28,7 +30,8 @@ export const constant:any = {
                 gname:"nombre de niña",
                 gnamePlc:"Ingrese el nombre de la niña..",
                 submitBtn:"Encontrar pareja",
-                goBack:"Regresa"
+                goBack:"Regresa",
+                error:'Por favor ingrese un mínimo de 4 caracteres y un máximo de 20 caracteres.'
             },
     },
     flames: {
