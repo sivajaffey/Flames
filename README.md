@@ -1,5 +1,7 @@
 # Flames
-"Flames" one of fun game in my childhood to find match between a boy and girl. 
+"Flames" A fun astrology game played in my childhood which finds match between boy and girl. 
+this is developed using react 18 and redux. 
+deployed in android link added below
 
 # Collabration
 
