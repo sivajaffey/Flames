@@ -1,4 +1,5 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
+import {constant} from './constant'
 let Game = "flames";
 const counterSlice = createSlice({
   name: 'Flames',
@@ -7,7 +8,8 @@ const counterSlice = createSlice({
     gname:'',
     lang:'en',
     flames:'',
-    page:0
+    page:0,
+    theme: 'basic',
   },
   reducers: {
     clearData:(state)=>{
@@ -23,6 +25,13 @@ const counterSlice = createSlice({
     setFlames: (state,action)=>{
       console.log(action)
       state.flames = action.payload;
+    },
+    setTheme:(state,action)=>{
+      let theme = (action.payload) ? action.payload :  'basic'
+      console.log(constant['themes'][theme].background)
+      document.getElementById('AppLook').style.background= ''+constant['themes'][theme].background+'';
+      document.getElementsByTagName('header')[0].style.background = constant['themes'][theme].header;
+      document.getElementsByTagName('button')[0].style.background = constant['themes'][theme].button;
     },
     submit: (state,action) =>{
       let bname = action.payload.bname?.trim();
@@ -104,7 +113,7 @@ const counterSlice = createSlice({
   }
 })
 
-export const { submit, setLang, setFlames, clearData } = counterSlice.actions
+export const { submit, setLang, setFlames, clearData, setTheme } = counterSlice.actions
 
 export const store = configureStore({
   reducer: counterSlice.reducer
