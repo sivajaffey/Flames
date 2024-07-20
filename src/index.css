@@ -18,7 +18,7 @@ import '@fontsource/roboto/700.css'; */
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  background: url(../src/assets/img/background.jpg) !important;
+  /* background: url(../src/assets/img/background.jpg) !important; */
   /* background-position: bottom; */
   /* position: fixed; */
   background-size: cover !important;
@@ -95,7 +95,7 @@ input::placeholder {
 /* header design starts */
 header {
   box-shadow: 10px 5px 33px 0px black !important;
-  background: hsl(340deg 100% 32%) !important;
+  /* background: hsl(340deg 100% 32%) !important; */
   border-radius: 0px 0px 10px 10px !important;
 }
 header h1 {
@@ -103,7 +103,7 @@ header h1 {
 }
 button {
   animation:breathanimation-btn 3s infinite;
-  background: hsl(340deg 100% 32%) !important;
+  /* background: hsl(340deg 100% 32%) !important; */
   border-radius: 0px 0px 10px 10px !important;
 }
 @keyframes breathanimation-btn {

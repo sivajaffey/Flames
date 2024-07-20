@@ -59,8 +59,44 @@ export const constant:any = {
                 'e':'ENEMIGA',
                 's':'HERMANA'
             },
+    },
+    themes: {
+        "basic": {
+            background: "url('../src/assets/img/background.jpg')",
+            header:"hsl(340deg 100% 32%)",
+            button:"hsl(340deg 100% 32%)",
+        },
+        "f": {
+            background: "url('../src/assets/img/f-bg.jpg')",
+            header:"rgb(127 132 192)",
+            button:"rgb(127 132 192)",
+        },
+        "l": {
+            background: "url('../src/assets/img/l-bg.jpg')",
+            header:"rgb(167 89 175)",
+            button:"rgb(167 89 175)",
+        },
+        "a": {
+            background: "url('../src/assets/img/a-bg.jpg')",
+            header:"rgb(77 163 63)",
+            button:"rgb(77 163 63)",
+        },
+        "m":{
+            background: "url('../src/assets/img/m-bg.jpg')",
+            header:"rgb(192 187 171)",
+            button:"rgb(192 187 171)",
+        },
+        "e": {
+            background: "url('../src/assets/img/e-bg.png')",
+            header:"rgb(64 65 75)",
+            button:"rgb(64 65 75)",
+        },
+        "s": {
+            background: "url('../src/assets/img/s-bg.jpg')",
+            header:"rgb(184 160 19)",
+            button:"rgb(184 160 19)",
+        }
     }
-    
 
 }
 export const clickSound = () => {
