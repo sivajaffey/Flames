@@ -1,15 +1,12 @@
-import './App.css';
-
-import Home from './pages/home'
-import Result from './pages/result'
+import './App.css'
+import Form from './components/form'
+import Result from './components/result'
  import { useSelector, useDispatch } from 'react-redux';
  import Container from '@mui/material/Container';
 import { useEffect } from 'react';
-import { setTheme } from './config/redux/store'
-import React from 'react';
-
-const App = () => {
-  const state:any = useSelector((state)=>state);
+import { setTheme } from './redux-configs/store'
+function App() {
+const state:any = useSelector((state)=>state);
 const dispatch = useDispatch();
   useEffect(()=>{
     // console.log(state)
@@ -18,11 +15,11 @@ const dispatch = useDispatch();
   return (
     <>
       <Container fixed>
-          {(state.page == 0) && <Home/>}
-          {(state.page == 1) && <Result/>}
+          {(state.page == 0) && <Form className="Form"/>}
+          {(state.page == 1) && <Result className="Form"/>}
       </Container>
     </>
   )
 }
 
-export default App;
+export default App
