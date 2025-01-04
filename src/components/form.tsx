@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Content, Grid, H1 } from "./ui-elements";
 import { ButtonField, TextInput } from "./form-inputs";
 
 const Form = (props) => {
+    const [formValues, setFormValues] = useState({})
     // const field = () => {
     //     return <Grid container content={
     //         <Grid item content={
@@ -15,45 +16,53 @@ const Form = (props) => {
     //         <H1 text={text.text}/>
     //     </>
     // }
+    
     const wrapper = (section) => {
         return <>
-            <H1 text={section?.sectionHeader} class={section?.class}/>
-            {section?.fields?.map(data=>{
-                console.log(data)
-                // formHeader(data?.sectionHeader);
-                // data.fields?.map(field=>{
-                    console.log(data)
-                    return fieldInputs(data);
-                // })
-            })}
+            
+            <Content content={
+                <><H1 text={section?.sectionHeader}/>
+                {section?.fields?.map(data=>{
+                    return <Grid container content={
+                                <Grid item content={
+                                    fieldInputs(data)
+                                }/>
+                            }/>
+                })}</>
+        }  class={section?.class}/> 
         </>
     }
-   
-    const [formValues, setFormValues] = useState({})
-    props.formValues(formValues)
+
+    const formSubmitBtn = (input) =>{
+        input.click(formValues)
+    }
     const fieldInputs = (input) => {
-        console.log(formValues)
-        switch(input.type) {
+        switch(input?.type) {
             case "text":
-                return <TextInput type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=>
+                return <TextInput className={input?.class} type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=>
                     setFormValues({...formValues, [input?.name]: e?.target?.value })
                 }/>
             break;
             case "button":
-                return <ButtonField text={input?.value} click={input?.click}/>
+                return <ButtonField className={input?.class} text={input?.value} click={()=>input?.click}/>
+            break;
+            case "submit":
+                return <ButtonField className={input?.class} text={input?.value} click={()=>formSubmitBtn(input)}/>
             break;
             default:
-                return <TextInput type={input?.type} placeholder={input?.placeholder} label={input?.label} change={input?.change}/>
+                return <TextInput className={input?.class} type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=>
+                    setFormValues({...formValues, [input?.name]: e?.target?.value })
+                }/>
         }
     }
     return <>
-        <Content content={
+        <Content  content={
             <>
-                {props.formfields.map(section=>{
+                {props?.formfields.map(section=>{
                     return wrapper(section)
                 })}
             </>
-        } className={'form-group'}/>
+        } className={props.class}/>
     </>
 }
 export default Form;

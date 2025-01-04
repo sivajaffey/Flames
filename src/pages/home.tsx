@@ -17,22 +17,26 @@ const Home = () => {
   const form = [
     {
         sectionHeader:"Flames",
+        class:"flames-form",
         fields:[
             {
                 name:'bname',
                 label:"Boy Name",
                 placeholder:"Enter Boy name",
                 type:"text",
+                class:"bname"
             },{
                 name:'gname',
                 label:"Girl Name",
                 placeholder:"Enter Girl name",
                 type:"text",
             },{
-                type:"button",
+                type:"submit",
                 value:"Submit",
-                click:()=>{
-                    console.log('click')
+                click:(e)=>{
+                    setBname(e.bname);
+                    setGname(e.gname);
+                    submitNames();
                 }
             },
         ]
@@ -46,7 +50,6 @@ const Home = () => {
             if (gname?.trim() !== '' && bname?.trim() !== '') {
               let gname1 = gname?.replace(/[&\/\\#, +()$~%.@!%^&*_+='":*?<>{}]/g, '');
               let bname1 = bname?.replace(/[&\/\\#, +()$~%.@!%^&*_+='":*?<>{}]/g, '');
-            //   console.log(gname1,bname1)
               dispatch(submit({'gname':gname1?.trim(),'bname':bname1?.trim()}));
             }
     } else {
@@ -57,8 +60,8 @@ const Home = () => {
     return <>
         <Content content={
             <>
-            <Header/>
-            <Form formfields={form}/>
+            <Header/>{formValue}
+            <Form formfields={form} setFormValues={(e)=>console.log(e)}/>
             <Footer />
         </>
         }/>
