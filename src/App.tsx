@@ -17,7 +17,7 @@ const dispatch = useDispatch();
   },[state.flames])
   return (
     <>
-      <Container fixed>
+      <Container fixed>{state.page}
           {(state.page == 0) && <Home/>}
           {(state.page == 1) && <Result/>}
       </Container>
