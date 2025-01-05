@@ -32,8 +32,27 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Flames</title>
+    <style>
+      html {
+        height: 100% !important;
+      }
+      #AppLook {
+        height: 85% !important;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+      }
+      header {
+        .right{
+          right: 5px !important;
+          position: fixed !important;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body id="AppLook">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

@@ -12,12 +12,11 @@ const App = () => {
   const state:any = useSelector((state)=>state);
 const dispatch = useDispatch();
   useEffect(()=>{
-    // console.log(state)
-    dispatch(setTheme(state.flames))
-  },[state.flames])
+    dispatch(setTheme(state?.flames))
+  },[state?.flames])
   return (
     <>
-      <Container fixed>{state.page}
+      <Container fixed>
           {(state.page == 0) && <Home/>}
           {(state.page == 1) && <Result/>}
       </Container>

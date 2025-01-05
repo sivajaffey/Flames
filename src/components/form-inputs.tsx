@@ -12,7 +12,6 @@ export const TextInput = (props) => {
 }
 
 export const SelectInput = (props) => {
-    console.log(props.list)
     return <Select className={props.class ? props?.class : 'lang-select'} onChange={props?.change} value={props?.value} >
                 {props.list.map(data=>{
                     return <MenuItem value={data.id}>{data.value}</MenuItem>

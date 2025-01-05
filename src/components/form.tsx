@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Content, Grid, H1 } from "./ui-elements";
 import { ButtonField, TextInput } from "./form-inputs";
 
@@ -36,6 +36,12 @@ const Form = (props) => {
     const formSubmitBtn = (input) =>{
         input.click(formValues)
     }
+    const setFormData = () => {
+        props.formData(formValues)
+    }
+    useEffect(()=>{console.log(formValues)
+        props?.formData(formValues)
+    },[formValues])
     const fieldInputs = (input) => {
         switch(input?.type) {
             case "text":

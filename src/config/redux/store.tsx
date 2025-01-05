@@ -23,15 +23,17 @@ const counterSlice = createSlice({
       state.lang = action.payload;
     },
     setFlames: (state,action)=>{
-      console.log(action)
       state.flames = action.payload;
     },
     setTheme:(state,action)=>{
       let theme = (action.payload) ? action.payload :  'basic'
-      console.log(constant['themes'][theme].background)
-      // document.getElementById('AppLook').style.background= ''+constant['themes'][theme].background+'';
-      // document.getElementsByTagName('header')[0].style.background = constant['themes'][theme].header;
-      // document.getElementsByTagName('button')[0].style.background = constant['themes'][theme].button;
+      let appLock=document.getElementById('AppLook')
+      if (appLock) {
+        console.log(appLock)
+        appLock.style.background= ''+constant['themes'][theme].background+'';
+      }
+      document.getElementsByTagName('header')[0].style.background = constant['themes'][theme].header;
+      document.getElementsByTagName('button')[0].style.background = constant['themes'][theme].button;
     },
     submit: (state,action) =>{
       let bname = action.payload.bname?.trim();
@@ -53,7 +55,6 @@ const counterSlice = createSlice({
       
             let game = arr?.join('');
             if (arr.length == 1) {
-              console.log('flames', arr[0])
                 // setFlames(arr[0])
               state.flames = arr[0];
                 return false;
@@ -91,7 +92,7 @@ const counterSlice = createSlice({
                 if (rmAr.length == 1) {
                     // setFlames(rmAr[rmAr.length-1])
                     // console.log(rmAr)
-                    console.log('flames',rmAr[rmAr?.length-1])
+                    // console.log('flames',rmAr[rmAr?.length-1])
                     // setFlames(rmAr[rmAr?.length-1])
                     state.flames = rmAr[rmAr?.length-1]
                     return false;
@@ -102,7 +103,7 @@ const counterSlice = createSlice({
           }
 
       if (aftRemoval !== '') {
-        console.log(aftRemoval)
+        // console.log(aftRemoval)
             // running flames function
             flames(aftRemoval.length, Game.split(''),'');
         } else {
