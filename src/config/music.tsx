@@ -18,6 +18,6 @@ export const playSounds = (val) => {
     } else {
         aud = 'click.wav'
     }
-    const audioTune = new Audio(`../../public/assets/sounds/${aud}`);
+    const audioTune = new Audio(`../assets/sounds/${aud}`);
     audioTune?.play();
 }

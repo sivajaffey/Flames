@@ -19,11 +19,12 @@ const Result = (props) => {
         <Content content={
             <><Header />
                 <PaperEl content={(state?.bname !== '' && state?.gname  !== '') && <div className="result">
+                    <H1 class="result-res" text={constant['flames'][state?.lang][state?.flames]} />
                 <p><label className="res-label">{constant['lang'][state?.lang]?.bname}:</label> <b className="wrap-text">{state?.bname}</b></p>
                 <p><label className="res-label">{constant['lang'][state?.lang]?.gname}:</label> <b className="wrap-text">{state?.gname}</b></p>
             </div> } />
-            <H1 class="result-res" text={constant['flames'][state?.lang][state?.flames]} />
-            <img src={`../src/assets/img/${state?.flames}.gif`} height={200} width={200}/>
+            
+                <img src={`../assets/img/${state?.flames}.gif`} height={200} width={200}/>
             <Footer back={'back'}/>
             </>
         } />

@@ -45,18 +45,16 @@ const Form = (props) => {
     const fieldInputs = (input) => {
         switch(input?.type) {
             case "text":
-                return <TextInput className={input?.class} type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=>
-                    setFormValues({...formValues, [input?.name]: e?.target?.value })
-                }/>
+                return <TextInput class={input?.class} type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=> setFormValues({...formValues, [input?.name]: e?.target?.value }) }/>
             break;
             case "button":
-                return <ButtonField className={input?.class} text={input?.value} click={()=>input?.click}/>
+                return <ButtonField class={input?.class} text={input?.value} click={()=>input?.click}/>
             break;
             case "submit":
-                return <ButtonField className={input?.class} text={input?.value} click={()=>formSubmitBtn(input)}/>
+                return <ButtonField class={input?.class} text={input?.value} click={()=>formSubmitBtn(input)}/>
             break;
             default:
-                return <TextInput className={input?.class} type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=>
+                return <TextInput class={input?.class} type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=>
                     setFormValues({...formValues, [input?.name]: e?.target?.value })
                 }/>
         }
@@ -68,7 +66,7 @@ const Form = (props) => {
                     return wrapper(section)
                 })}
             </>
-        } className={props.class}/>
+        } class={props.class}/>
     </>
 }
 export default Form;

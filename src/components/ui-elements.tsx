@@ -26,5 +26,7 @@ export const NavToolBar = (props) => {
 }
 
 export const PaperEl = (props) => {
-    return <Paper className={props?.class}>{props?.content}</Paper>
+    // return <Paper className={props?.class}>
+        return props?.content
+        {/* </Paper> */}
 }

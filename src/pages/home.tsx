@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clickSound } from "../config/music";
 import { constant } from "../config/lang";
@@ -12,9 +12,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const state:any = useSelector((state)=>state);
   const [formValue, setFormValues] = useState();
-  // useEffect(()=>{
-  //   console.log(formValue)
-  // },[formValue])
   const form = [
     {
         sectionHeader:"Flames",
@@ -25,22 +22,14 @@ const Home = () => {
                 label:"Boy Name",
                 placeholder:"Enter Boy name",
                 type:"text",
-                class:"bname"
+                class:"field-name"
             },{
+                class:"field-name",
                 name:'gname',
                 label:"Girl Name",
                 placeholder:"Enter Girl name",
                 type:"text",
             },
-            // {
-            //     type:"submit",
-            //     value:"Submit",
-            //     click:(e)=>{
-            //         // setBname(e.bname);
-            //         // setGname(e.gname);
-            //         submitNames(e);
-            //     }
-            // },
         ]
     }
   ]
@@ -56,11 +45,12 @@ const Home = () => {
             }
     } else {
       alert(constant['lang'][state.lang].error)
+      return false
     }
   }
   
     return <>
-        <Content content={
+        <Content class={'home-page'} content={
             <>
             <Header/>
               <Form formfields={form} formData={(e)=>setFormValues(e)}/>
