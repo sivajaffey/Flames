@@ -23,17 +23,19 @@ const counterSlice = createSlice({
       state.lang = action.payload;
     },
     setFlames: (state,action)=>{
+      console.log(state,action)
+      console.log(state.flames, action.payload)
       state.flames = action.payload;
     },
     setTheme:(state,action)=>{
       let theme = (action.payload) ? action.payload :  'basic'
       let appLock=document.getElementById('AppLook')
       if (appLock) {
-        console.log(appLock)
-        appLock.style.background= ''+constant['themes'][theme].background+'';
+        // console.log(appLock)
+        appLock.style.background= ''+constant['themes'][theme]?.background+'';
       }
-      document.getElementsByTagName('header')[0].style.background = constant['themes'][theme].header;
-      document.getElementsByTagName('button')[0].style.background = constant['themes'][theme].button;
+      document.getElementsByTagName('header')[0].style.background = constant['themes'][theme]?.header;
+      document.getElementsByTagName('button')[0].style.background = constant['themes'][theme]?.button;
     },
     submit: (state,action) =>{
       let bname = action.payload.bname?.trim();
@@ -101,13 +103,15 @@ const counterSlice = createSlice({
                     flames(Fcount, rmAr, nextChar);
                 }
           }
-
+          console.log(state.flames, aftRemoval)
       if (aftRemoval !== '') {
-        // console.log(aftRemoval)
+        console.log(aftRemoval)
             // running flames function
             flames(aftRemoval.length, Game.split(''),'');
         } else {
-            setFlames('f') // setting default if both names same charectors with same length
+          console.log('s')
+          state.flames = 'f'
+            // setFlames('f') // setting default if both names same charectors with same length
         }
         state.page = 1;
       }

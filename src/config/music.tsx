@@ -1,5 +1,5 @@
 export const clickSound = () => {
-    const audioTune = new Audio('../../public/assets/sounds/click.wav');
+    const audioTune = new Audio('../assets/sounds/click.wav');
     audioTune?.play();
 }
 
