@@ -22,9 +22,10 @@ const counterSlice = createSlice({
     setLang:(state,action)=>{
       state.lang = action.payload;
     },
+    setPage:(state,action)=>{
+      state.page = action.payload;
+    },
     setFlames: (state,action)=>{
-      console.log(state,action)
-      console.log(state.flames, action.payload)
       state.flames = action.payload;
     },
     setTheme:(state,action)=>{
@@ -118,7 +119,7 @@ const counterSlice = createSlice({
   }
 })
 
-export const { submit, setLang, setFlames, clearData, setTheme } = counterSlice.actions
+export const { submit, setLang, setFlames, clearData, setTheme, setPage } = counterSlice.actions
 
 export const store = configureStore({
   reducer: counterSlice.reducer

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Container, Grid2, AppBar, Toolbar, Paper } from '@mui/material';
+import { TextField, Container, Grid2, AppBar, Toolbar, Paper, List, ListItemAvatar, Avatar, Typography, ListItemText, ListItem, Divider } from '@mui/material';
 
 export const H1 = (props) => {
     return <h1 className={props?.class}>{props?.text}</h1>
@@ -29,4 +29,39 @@ export const PaperEl = (props) => {
     // return <Paper className={props?.class}>
         return props?.content
         {/* </Paper> */}
+}
+
+export const ListItems = (props) => {
+    let listArr = props?.list
+    return <List sx={props?.sx} className={props?.class}>
+        {listArr.map(item=>{
+            return <>
+                <ListItem alignItems="flex-start">
+                    {item?.avatar && 
+                        <ListItemAvatar>
+                            <Avatar alt={item?.alt} src={item?.AvatarSrc} />
+                        </ListItemAvatar>
+                    }
+                    {item?.listItemText &&
+                        <ListItemText
+                        primary={item?.primaryTitle}
+                        secondary={
+                            <React.Fragment>
+                            <Typography
+                                component="span"
+                                variant="body2"
+                                sx={{ color: 'text.primary', display: 'inline' }}
+                            >
+                                {item?.primaryDescName}
+                            </Typography>
+                            {item?.primaryDesc}
+                            </React.Fragment>
+                        }
+                        />
+                    }
+                </ListItem>
+                <Divider variant="inset" component="li" />
+            </>
+        })}
+    </List>
 }

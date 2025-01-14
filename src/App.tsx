@@ -7,6 +7,7 @@ import Result from './pages/result'
 import { useEffect } from 'react';
 import { setTheme } from './config/redux/store'
 import React from 'react';
+import Settings from './pages/settings';
 
 const App = () => {
   const state:any = useSelector((state)=>state);
@@ -19,6 +20,7 @@ const dispatch = useDispatch();
       <Container fixed>
           {(state.page == 0) && <Home/>}
           {(state.page == 1) && <Result/>}
+          {(state.page == 2) && <Settings/>}
       </Container>
     </>
   )
