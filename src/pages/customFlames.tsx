@@ -31,7 +31,7 @@ const CustomFlames = (props) => {
     return <>
         <Content content={
             <><Header />
-            <ListItems class={'settings-list'} list={
+            {/* <ListItems class={'settings-list'} list={
                 [
                     {
                         listItemText:true,
@@ -40,10 +40,10 @@ const CustomFlames = (props) => {
                     }, {
                         listItemText:true,
                         primaryTitle:"Language", 
-                        primaryDesc: <ButtonField content={constant.lang[state.lang]?.customFlames}/>
+                        primaryDesc: <ButtonField text={constant.lang[state.lang]?.customFlames}/>
                     },
                 ]
-            }/>
+            }/> */}
             <Footer back={'back'}/>
             </>
         } />

@@ -35,8 +35,12 @@ const counterSlice = createSlice({
         // console.log(appLock)
         appLock.style.background= ''+constant['themes'][theme]?.background+'';
       }
+      if (document.getElementsByTagName('header')?.length > 0){
       document.getElementsByTagName('header')[0].style.background = constant['themes'][theme]?.header;
-      document.getElementsByTagName('button')[0].style.background = constant['themes'][theme]?.button;
+      }
+      if (document.getElementsByTagName('button')?.length > 0){
+        document.getElementsByTagName('button')[0].style.background = constant['themes'][theme]?.button;
+        }
     },
     submit: (state,action) =>{
       let bname = action.payload.bname?.trim();

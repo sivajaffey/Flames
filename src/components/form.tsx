@@ -4,19 +4,6 @@ import { ButtonField, TextInput } from "./form-inputs";
 
 const Form = (props) => {
     const [formValues, setFormValues] = useState({})
-    // const field = () => {
-    //     return <Grid container content={
-    //         <Grid item content={
-    //             <TextInput />
-    //         }/>
-    //     }/>
-    // }
-    // const formHeader = (text) => {
-    //     return <>
-    //         <H1 text={text.text}/>
-    //     </>
-    // }
-    
     const wrapper = (section) => {
         return <>
             

@@ -35,11 +35,10 @@ const Settings = (props) => {
                 [
                     {
                         listItemText:true,
-                        primaryTitle:"Language", 
+                        primaryTitle:constant?.lang[state?.lang]?.langHeader, 
                         primaryDesc: <SelectInput list={list} value={state.lang} change={handleChange} class={'settings-menu'}/>
                     }, {
                         listItemText:true,
-                        primaryTitle:"Language", 
                         primaryDesc: <ButtonField content={constant.lang[state.lang]?.customFlames} click={dispatch(setPage(3))}/>
                     },
                 ]

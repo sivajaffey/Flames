@@ -1,6 +1,7 @@
 export const constant = {
     lang: {
         'en' : {
+                lang:'English',
                 title:"Flames",
                 subtitle:"Have fun!",
                 bname:"Boy name",
@@ -11,9 +12,11 @@ export const constant = {
                 goBack:"Go Back",
                 error:'Please enter minimum 4 character max of 20 character',
                 customFlames:"Custom Flames",
-                pageNotAvailable:"No Page Available"
+                pageNotAvailable:"No Page Available",
+                langHeader:"Select your Language"
             },
             'fr' : {
+                lang:'French',
                 title:"Flames",
                 subtitle:"Amusez-vous!",
                 bname:"Nom du garçon",
@@ -24,9 +27,11 @@ export const constant = {
                 goBack:"Retourner",
                 error:'Veuillez saisir au minimum 4 caractères et au maximum 20 caractères.',
                 customFlames:"Custom Flames",
-                pageNotAvailable:"No Page Available"
+                pageNotAvailable:"No Page Available",
+                langHeader:"Select your Language"
             },
             'span':{
+                lang:'Spanish',
                 title:"Flames",
                 subtitle:"¡Divertirse!",
                 bname:"nombre del niño",
@@ -37,7 +42,8 @@ export const constant = {
                 goBack:"Regresa",
                 error:'Por favor ingrese un mínimo de 4 caracteres y un máximo de 20 caracteres.',
                 customFlames:"Custom Flames",
-                pageNotAvailable:"No Page Available"
+                pageNotAvailable:"No Page Available",
+                langHeader:"Select your Language"
             },
     },
     flames: {
