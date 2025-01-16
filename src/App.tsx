@@ -1,13 +1,13 @@
 import './App.css';
 
-import Home from './pages/home'
-import Result from './pages/result'
+
  import { useSelector, useDispatch } from 'react-redux';
  import Container from '@mui/material/Container';
 import { useEffect } from 'react';
 import { setTheme } from './config/redux/store'
 import React from 'react';
-import Settings from './pages/settings';
+import CustomRoute from './config/routes';
+
 
 const App = () => {
   const state:any = useSelector((state)=>state);
@@ -18,9 +18,7 @@ const dispatch = useDispatch();
   return (
     <>
       <Container fixed>
-          {(state.page == 0) && <Home/>}
-          {(state.page == 1) && <Result/>}
-          {(state.page == 2) && <Settings/>}
+          <CustomRoute />
       </Container>
     </>
   )

@@ -36,14 +36,15 @@ export const ListItems = (props) => {
     return <List sx={props?.sx} className={props?.class}>
         {listArr.map(item=>{
             return <>
-                <ListItem alignItems="flex-start">
+                <ListItem alignItems="flex-start" className={item?.class}>
                     {item?.avatar && 
-                        <ListItemAvatar>
-                            <Avatar alt={item?.alt} src={item?.AvatarSrc} />
+                        <ListItemAvatar className={item?.headerClass}>
+                            <Avatar alt={item?.alt} src={item?.AvatarSrc} className={item?.avatarClass}/>
                         </ListItemAvatar>
                     }
                     {item?.listItemText &&
                         <ListItemText
+                        className={item?.listClass}
                         primary={item?.primaryTitle}
                         secondary={
                             <React.Fragment>

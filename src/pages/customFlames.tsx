@@ -5,11 +5,11 @@ import { Content, ListItems } from "../components/ui-elements";
 import Header from "../components/header";
 import React from "react";
 import Footer from "../components/footer";
-import { setLang, setPage } from "../config/redux/store";
+import { setLang } from "../config/redux/store";
 import { ButtonField, SelectInput } from "../components/form-inputs";
 import { constant } from "../config/lang";
 
-const Settings = (props) => {
+const CustomFlames = (props) => {
     const dispatch = useDispatch();
     const state:any = useSelector((state)=>state);
     const setLanguage = (e:any) => {
@@ -40,7 +40,7 @@ const Settings = (props) => {
                     }, {
                         listItemText:true,
                         primaryTitle:"Language", 
-                        primaryDesc: <ButtonField content={constant.lang[state.lang]?.customFlames} click={dispatch(setPage(3))}/>
+                        primaryDesc: <ButtonField content={constant.lang[state.lang]?.customFlames}/>
                     },
                 ]
             }/>
@@ -49,4 +49,4 @@ const Settings = (props) => {
         } />
     </>
 }
-export default Settings
+export default CustomFlames

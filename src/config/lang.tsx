@@ -9,7 +9,9 @@ export const constant = {
                 gnamePlc:"Enter girl name..",
                 submitBtn:"Find Match",
                 goBack:"Go Back",
-                error:'Please enter minimum 4 character max of 20 character'
+                error:'Please enter minimum 4 character max of 20 character',
+                customFlames:"Custom Flames",
+                pageNotAvailable:"No Page Available"
             },
             'fr' : {
                 title:"Flames",
@@ -20,7 +22,9 @@ export const constant = {
                 gnamePlc:"Entrez le nom de la fille..",
                 submitBtn:"Trouver la correspondance",
                 goBack:"Retourner",
-                error:'Veuillez saisir au minimum 4 caractères et au maximum 20 caractères.'
+                error:'Veuillez saisir au minimum 4 caractères et au maximum 20 caractères.',
+                customFlames:"Custom Flames",
+                pageNotAvailable:"No Page Available"
             },
             'span':{
                 title:"Flames",
@@ -31,7 +35,9 @@ export const constant = {
                 gnamePlc:"Ingrese el nombre de la niña..",
                 submitBtn:"Encontrar pareja",
                 goBack:"Regresa",
-                error:'Por favor ingrese un mínimo de 4 caracteres y un máximo de 20 caracteres.'
+                error:'Por favor ingrese un mínimo de 4 caracteres y un máximo de 20 caracteres.',
+                customFlames:"Custom Flames",
+                pageNotAvailable:"No Page Available"
             },
     },
     flames: {
