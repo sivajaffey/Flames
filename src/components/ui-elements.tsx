@@ -34,7 +34,7 @@ export const PaperEl = (props) => {
 export const ListItems = (props) => {
     let listArr = props?.list
     return <List sx={props?.sx} className={props?.class}>
-        {listArr.map(item=>{
+        {listArr?.length > 0 ? listArr?.map(item=>{
             return <>
                 <ListItem alignItems="flex-start" className={item?.class}>
                     {item?.avatar && 
@@ -63,6 +63,6 @@ export const ListItems = (props) => {
                 </ListItem>
                 <Divider variant="inset" component="li" />
             </>
-        })}
+        }) : []}
     </List>
 }

@@ -13,7 +13,8 @@ export const constant = {
                 error:'Please enter minimum 4 character max of 20 character',
                 customFlames:"Custom Flames",
                 pageNotAvailable:"No Page Available",
-                langHeader:"Select your Language"
+                langHeader:"Select your Language",
+                themeSelect:"Select your Theme",
             },
             'fr' : {
                 lang:'French',
@@ -28,7 +29,8 @@ export const constant = {
                 error:'Veuillez saisir au minimum 4 caractères et au maximum 20 caractères.',
                 customFlames:"Custom Flames",
                 pageNotAvailable:"No Page Available",
-                langHeader:"Select your Language"
+                langHeader:"Select your Language",
+                themeSelect:"Select your Theme",
             },
             'span':{
                 lang:'Spanish',
@@ -43,7 +45,8 @@ export const constant = {
                 error:'Por favor ingrese un mínimo de 4 caracteres y un máximo de 20 caracteres.',
                 customFlames:"Custom Flames",
                 pageNotAvailable:"No Page Available",
-                langHeader:"Select your Language"
+                langHeader:"Select your Language",
+                themeSelect:"Select your Theme",
             },
     },
     flames: {
@@ -77,6 +80,11 @@ export const constant = {
             background: "url('../assets/img/background.jpg')",
             header:"hsl(340deg 100% 32%)",
             button:"hsl(340deg 100% 32%)",
+        },
+        "lite": {
+            background: "url('../assets/img/lite.jpg')",
+            header:"rgb(143 166 202)",
+            button:"rgb(143 166 202)",
         },
         "f": {
             background: "url('../assets/img/f-bg.jpg')",

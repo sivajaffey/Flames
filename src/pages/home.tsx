@@ -5,7 +5,6 @@ import { constant } from "../config/lang";
 import { submit } from "../config/redux/store";
 import { Content } from "../components/ui-elements";
 import React from 'react';
-import Header from "../components/header";
 import Form from "../components/form";
 import Footer from "../components/footer";
 const Home = () => {
@@ -19,15 +18,15 @@ const Home = () => {
         fields:[
             {
                 name:'bname',
-                label:"Boy Name",
-                placeholder:"Enter Boy name",
+                label: constant.lang[state.lang].bname,
+                placeholder:constant.lang[state.lang].bnamePlc,
                 type:"text",
                 class:"field-name"
             },{
                 class:"field-name",
                 name:'gname',
-                label:"Girl Name",
-                placeholder:"Enter Girl name",
+                label: constant.lang[state.lang].gname,
+                placeholder:constant.lang[state.lang].gnamePlc,
                 type:"text",
             },
         ]
@@ -52,8 +51,7 @@ const Home = () => {
     return <>
         <Content class={'home-page'} content={
             <>
-            <Header/>
-              <Form formfields={form} formData={(e)=>setFormValues(e)}/>
+            <Form formfields={form} formData={(e)=>setFormValues(e)}/>
             <Footer submit={()=>submitNames(formValue)}/>
         </>
         }/>

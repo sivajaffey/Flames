@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { constant } from "../config/lang";
 import { H1, NavBar, NavToolBar } from "./ui-elements";
-import { setPage } from "../config/redux/store";
+import { setPage, setTheme } from "../config/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { Settings } from '@mui/icons-material';
 
 const Header = () => {
     const state:any = useSelector((state)=>state);
     const dispatch = useDispatch();
+    useEffect(()=>{
+        
+    },[])
     return  <NavBar content={
             
             <NavToolBar content={<>

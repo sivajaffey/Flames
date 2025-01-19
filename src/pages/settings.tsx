@@ -2,11 +2,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { playSounds } from "../config/music";
 import { Content, ListItems } from "../components/ui-elements";
-import Header from "../components/header";
 import React from "react";
 import Footer from "../components/footer";
-import { setLang, setPage } from "../config/redux/store";
-import { ButtonField, SelectInput } from "../components/form-inputs";
+import { setLang, setTheme } from "../config/redux/store";
+import { SelectInput } from "../components/form-inputs";
 import { constant } from "../config/lang";
 
 const Settings = (props) => {
@@ -16,12 +15,21 @@ const Settings = (props) => {
             dispatch(setLang(e));
         }   
         const handleChange = (event: any) => {
+            localStorage.setItem('lang',event.target.value)
             setLanguage(event.target.value)
         };
+        const handleTheme = (event: any) => {
+            localStorage.setItem('theme',event.target.value)
+            dispatch(setTheme(event.target.value))
+        }
         const list = [
             {id: 'en', value:'English'},
             {id: 'span', value:'Spanish'},
             {id: 'fr', value:'French'},
+        ]
+        const themeList = [
+            {id: 'basic', value:'Basic'},
+            {id: 'lite', value:'Lite'},
         ]
     useEffect(()=>{
         if (state?.flames !== '') {
@@ -30,16 +38,18 @@ const Settings = (props) => {
     },[])
     return <>
         <Content content={
-            <><Header />
+            <>
             <ListItems class={'settings-list'} list={
                 [
                     {
                         listItemText:true,
                         primaryTitle:constant?.lang[state?.lang]?.langHeader, 
                         primaryDesc: <SelectInput list={list} value={state.lang} change={handleChange} class={'settings-menu'}/>
-                    }, {
+                    }, 
+                    {
                         listItemText:true,
-                        primaryDesc: <ButtonField content={constant.lang[state.lang]?.customFlames} click={dispatch(setPage(3))}/>
+                        primaryTitle:constant?.lang[state?.lang]?.themeSelect, 
+                        primaryDesc: <SelectInput list={themeList} value={state.theme} change={handleTheme} class={'settings-menu'}/>
                     },
                 ]
             }/>

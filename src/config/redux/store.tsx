@@ -1,6 +1,7 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
 import {constant} from '../lang'
 let Game = "flames";
+let theme = "basic";
 const counterSlice = createSlice({
   name: 'Flames',
   initialState: {
@@ -9,7 +10,7 @@ const counterSlice = createSlice({
     lang:'en',
     flames:'',
     page:0,
-    theme: 'basic',
+    theme: theme,
   },
   reducers: {
     clearData:(state)=>{
@@ -30,17 +31,18 @@ const counterSlice = createSlice({
     },
     setTheme:(state,action)=>{
       let theme = (action.payload) ? action.payload :  'basic'
+      state.theme = theme;console.log(constant['themes'][theme]?.header)
       let appLock=document.getElementById('AppLook')
       if (appLock) {
-        // console.log(appLock)
         appLock.style.background= ''+constant['themes'][theme]?.background+'';
       }
       if (document.getElementsByTagName('header')?.length > 0){
-      document.getElementsByTagName('header')[0].style.background = constant['themes'][theme]?.header;
+        document.getElementsByTagName('header')[0].style.background = constant['themes'][theme]?.header;
       }
+      console.log(document.getElementsByTagName('button'))
       if (document.getElementsByTagName('button')?.length > 0){
         document.getElementsByTagName('button')[0].style.background = constant['themes'][theme]?.button;
-        }
+      }
     },
     submit: (state,action) =>{
       let bname = action.payload.bname?.trim();

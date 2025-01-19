@@ -4,14 +4,19 @@ import Home from '../pages/home'
 import Result from '../pages/result'
 import Settings from '../pages/settings';
 import CustomFlames from '../pages/customFlames';
+import Header from "../components/header";
 
 const CustomRoute = (props) => {
 const state:any = useSelector((state)=>state);
+const Router = [
+  {id : 0 , component: <Home /> },
+  {id : 1 , component: <Result /> },
+  {id : 2 , component: <Settings /> },
+  {id : 3 , component: <CustomFlames /> },
+]
  return <>
-   {state?.page === 0 && <Home />}
-   {state?.page === 1 && <Result />}
-   {state?.page === 2 && <Settings />}
-   {state?.page === 3 && <CustomFlames />}
+  <Header />
+   {Router.filter(route=>route.id == state?.page).length > 0 ? Router.filter(route=>route.id == state?.page)[0].component : 'No Page Found'}
  </>
 }
 

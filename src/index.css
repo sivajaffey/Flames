@@ -26,3 +26,6 @@ code {
 .css-14ln1j6-MuiListItemText-root .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
   color: white !important;
 }
+.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  color: black;
+}
