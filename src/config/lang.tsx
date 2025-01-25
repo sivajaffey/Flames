@@ -15,9 +15,20 @@ export const constant = {
                 pageNotAvailable:"No Page Available",
                 langHeader:"Select your Language",
                 themeSelect:"Select your Theme",
+                history:"History",
+                view:"View",
+                clear:"Clear History",
+                noData:"No Data Found",
+                on:'Turn On',
+                off:'Turn Off',
+                loading:"Loading...",
+                theme:{
+                   basic:"Basic", 
+                   lite:"Lite"
+                }
             },
             'fr' : {
-                lang:'French',
+                lang:'Français',
                 title:"Flames",
                 subtitle:"Amusez-vous!",
                 bname:"Nom du garçon",
@@ -27,13 +38,24 @@ export const constant = {
                 submitBtn:"Trouver la correspondance",
                 goBack:"Retourner",
                 error:'Veuillez saisir au minimum 4 caractères et au maximum 20 caractères.',
-                customFlames:"Custom Flames",
-                pageNotAvailable:"No Page Available",
-                langHeader:"Select your Language",
-                themeSelect:"Select your Theme",
+                customFlames:"Flames personnalisées",
+                pageNotAvailable:"Aucune page disponible",
+                langHeader:"Sélectionnez votre langue",
+                themeSelect:"Sélectionnez votre thème",
+                history:"History",
+                view:"View",
+                clear:"Clear History",
+                noData:"No Data Found",
+                on:'Turn On',
+                off:'Turn Off',
+                loading:"Chargement...",
+                theme:{
+                   basic:"Basique", 
+                   lite:"Légère"
+                }
             },
             'span':{
-                lang:'Spanish',
+                lang:'Española',
                 title:"Flames",
                 subtitle:"¡Divertirse!",
                 bname:"nombre del niño",
@@ -43,11 +65,103 @@ export const constant = {
                 submitBtn:"Encontrar pareja",
                 goBack:"Regresa",
                 error:'Por favor ingrese un mínimo de 4 caracteres y un máximo de 20 caracteres.',
-                customFlames:"Custom Flames",
-                pageNotAvailable:"No Page Available",
-                langHeader:"Select your Language",
-                themeSelect:"Select your Theme",
+                customFlames:"Flames personalizadas",
+                pageNotAvailable:"No hay página disponible",
+                langHeader:"Selecciona tu idioma",
+                themeSelect:"Selecciona tu tema",
+                history:"History",
+                view:"View",
+                clear:"Clear History",
+                noData:"No Data Found",
+                on:'Turn On',
+                off:'Turn Off',
+                loading:"Cargando...",
+                theme:{
+                   basic:"Básica", 
+                   lite:"Ligera"
+                }
             },
+            'jpan':{
+                lang:'日本語',
+                title:"Flames",
+                subtitle:"楽しむ！",
+                bname:"男の子の名前",
+                bnamePlc:"男の子の名前を入力してください。",
+                gname:"女の子の名前",
+                gnamePlc:"女の子の名前を入力してください。",
+                submitBtn:"一致の検索",
+                goBack:"戻る",
+                error:'最小 4 文字、最大 20 文字を入力してください',
+                customFlames:"カスタムフレーム",
+                pageNotAvailable:"利用可能なページがありません",
+                langHeader:"言語を選択してください",
+                themeSelect:"テーマを選択してください",
+                history:"History",
+                view:"View",
+                clear:"Clear History",
+                noData:"No Data Found",
+                on:'Turn On',
+                off:'Turn Off',
+                loading:"読み込み中...",
+                theme:{
+                   basic:"基本", 
+                   lite:"ライト"
+                }
+            },
+            'chin':{
+                lang:'中国人',
+                title:"Flames",
+                subtitle:"玩得开心！",
+                bname:"男孩名字",
+                bnamePlc:"输入男孩名字..",
+                gname:"女孩名字",
+                gnamePlc:"输入女孩名字..",
+                submitBtn:"寻找匹配",
+                goBack:"回去",
+                error:'请输入最少 4 个字符，最多 20 个字符',
+                customFlames:"定制火焰",
+                pageNotAvailable:"没有可用页面",
+                langHeader:"选择您的语言",
+                themeSelect:"选择您的主题",
+                history:"History",
+                view:"View",
+                clear:"Clear History",
+                noData:"No Data Found",
+                on:'Turn On',
+                off:'Turn Off',
+                loading:"加载中...",
+                theme:{
+                   basic:"基本的", 
+                   lite:"精简版"
+                }
+            },
+            'kor':{
+                lang:'한국인',
+                title:"Flames",
+                subtitle:"재미있게 보내세요!",
+                bname:"소년 이름",
+                bnamePlc:"남자아이 이름을 입력하세요..",
+                gname:"여자 이름",
+                gnamePlc:"여자 이름을 입력하세요..",
+                submitBtn:"일치 찾기",
+                goBack:"돌아가기",
+                error:'최소 4자에서 최대 20자까지 입력하세요.',
+                customFlames:"맞춤형 불꽃",
+                pageNotAvailable:"사용 가능한 페이지가 없습니다",
+                langHeader:"언어를 선택하세요",
+                themeSelect:"테마를 선택하세요",
+                history:"History",
+                view:"View",
+                clear:"Clear History",
+                noData:"No Data Found",
+                on:'Turn On',
+                off:'Turn Off',
+                loading:"로드 중...",
+                theme:{
+                   basic:"기초적인", 
+                   lite:"라이트"
+                }
+            }
     },
     flames: {
             'en' : {
@@ -74,6 +188,30 @@ export const constant = {
                 'e':'ENEMIGA',
                 's':'HERMANA'
             },
+            'jpan' : {
+                'f':"友達",
+                'l':'愛',
+                'a':'愛情',
+                'm':'結婚',
+                'e':'敵',
+                's':'妹'
+            },
+            'chin' : {
+                'f':"朋友们",
+                'l':'爱',
+                'a':'感情',
+                'm':'婚姻',
+                'e':'敌人',
+                's':'姐姐'
+            },
+            'kor':{
+                'f':"친구",
+                'l':'사랑',
+                'a':'애정',
+                'm':'결혼',
+                'e':'적',
+                's':'자매'
+            }
     },
     themes: {
         "basic": {
@@ -83,8 +221,8 @@ export const constant = {
         },
         "lite": {
             background: "url('../assets/img/lite.jpg')",
-            header:"rgb(143 166 202)",
-            button:"rgb(143 166 202)",
+            header:"rgb(62 128 232)",
+            button:"rgb(62 128 232)",
         },
         "f": {
             background: "url('../assets/img/f-bg.jpg')",

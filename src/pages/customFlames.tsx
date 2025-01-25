@@ -12,38 +12,15 @@ import { constant } from "../config/lang";
 const CustomFlames = (props) => {
     const dispatch = useDispatch();
     const state:any = useSelector((state)=>state);
-    const setLanguage = (e:any) => {
-            dispatch(setLang(e));
-        }   
-        const handleChange = (event: any) => {
-            setLanguage(event.target.value)
-        };
-        const list = [
-            {id: 'en', value:'English'},
-            {id: 'span', value:'Spanish'},
-            {id: 'fr', value:'French'},
-        ]
+
     useEffect(()=>{
-        if (state?.flames !== '') {
-            playSounds(state?.flames)
-        }
+
     },[])
+
     return <>
         <Content content={
             <><Header />
-            <ListItems class={'settings-list'} list={
-                [
-                    {
-                        listItemText:true,
-                        primaryTitle:"Language", 
-                        primaryDesc: <SelectInput list={list} value={state.lang} change={handleChange} class={'settings-menu'}/>
-                    }, {
-                        listItemText:true,
-                        primaryTitle:"Language", 
-                        primaryDesc: <ButtonField text={constant.lang[state.lang]?.customFlames}/>
-                    },
-                ]
-            }/>
+            
             <Footer back={'back'}/>
             </>
         } />

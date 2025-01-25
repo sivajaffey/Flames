@@ -16,12 +16,19 @@ code {
   right: 5%;
   position: fixed;
 }
+.top-right {
+  top:2%;
+  right: 5%;
+  position: fixed;
+}
 .settings-list {
   left: 0;
   top: 12%;
 }
 .css-b7dj7n-MuiList-root {
   position: fixed !important;
+  overflow: auto;
+    height: 80%;
 }
 .css-14ln1j6-MuiListItemText-root .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
   color: white !important;

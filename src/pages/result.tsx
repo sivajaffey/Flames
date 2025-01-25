@@ -1,17 +1,22 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { playSounds } from "../config/music";
 import { Content, H1, PaperEl } from "../components/ui-elements";
 import Header from "../components/header";
 import React from "react";
 import { constant } from "../config/lang";
 import Footer from "../components/footer";
+import { setHistoryList } from "../config/redux/store";
 
 const Result = (props) => {
+    const dispatch = useDispatch();
     const state:any = useSelector((state)=>state);
     useEffect(()=>{
         if (state?.flames !== '') {
             playSounds(state?.flames)
+        }
+        if (localStorage && localStorage.getItem('historyData')) {
+            dispatch(setHistoryList(JSON.parse(localStorage.getItem('historyData'))))
         }
     },[])
     return <>

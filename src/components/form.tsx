@@ -26,7 +26,7 @@ const Form = (props) => {
     const setFormData = () => {
         props.formData(formValues)
     }
-    useEffect(()=>{console.log(formValues)
+    useEffect(()=>{// console.log(formValues)
         props?.formData(formValues)
     },[formValues])
     const fieldInputs = (input) => {

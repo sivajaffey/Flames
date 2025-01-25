@@ -3,6 +3,7 @@ import React from "react";
 import Home from '../pages/home'
 import Result from '../pages/result'
 import Settings from '../pages/settings';
+import History from '../pages/history';
 import CustomFlames from '../pages/customFlames';
 import Header from "../components/header";
 
@@ -13,6 +14,7 @@ const Router = [
   {id : 1 , component: <Result /> },
   {id : 2 , component: <Settings /> },
   {id : 3 , component: <CustomFlames /> },
+  {id : 4 , component: <History /> },
 ]
  return <>
   <Header />
