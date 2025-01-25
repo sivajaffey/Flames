@@ -11,6 +11,11 @@ const Home = () => {
   const dispatch = useDispatch();
   const state:any = useSelector((state)=>state);
   const [formValue, setFormValues] = useState();
+  const style = {
+          background: constant['themes'][state?.theme]?.header,
+          // color:constant['themes'][state?.theme]?.color,
+          // label:constant['themes'][state?.theme]?.color,
+      }
   const form = [
     {
         sectionHeader:"Flames",

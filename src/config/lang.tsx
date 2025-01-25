@@ -217,42 +217,50 @@ export const constant = {
         "basic": {
             background: "url('../assets/img/background.jpg')",
             header:"hsl(340deg 100% 32%)",
+            color:'white',
             button:"hsl(340deg 100% 32%)",
         },
         "lite": {
             background: "url('../assets/img/lite.jpg')",
             header:"rgb(62 128 232)",
+            color:'white',
             button:"rgb(62 128 232)",
         },
         "f": {
             background: "url('../assets/img/f-bg.jpg')",
             header:"rgb(127 132 192)",
             button:"rgb(127 132 192)",
+            color:'white',
         },
         "l": {
             background: "url('../assets/img/l-bg.jpg')",
             header:"rgb(167 89 175)",
             button:"rgb(167 89 175)",
+            color:'white',
         },
         "a": {
             background: "url('../assets/img/a-bg.jpg')",
             header:"rgb(77 163 63)",
             button:"rgb(77 163 63)",
+            color:'white',
         },
         "m":{
             background: "url('../assets/img/m-bg.jpg')",
             header:"rgb(192 187 171)",
             button:"rgb(192 187 171)",
+            color:'white',
         },
         "e": {
             background: "url('../assets/img/e-bg.png')",
             header:"rgb(64 65 75)",
             button:"rgb(64 65 75)",
+            color:'white',
         },
         "s": {
             background: "url('../assets/img/s-bg.jpg')",
             header:"rgb(184 160 19)",
             button:"rgb(184 160 19)",
+            color:'white',
         }
     }
 

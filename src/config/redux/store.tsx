@@ -46,7 +46,7 @@ const counterSlice = createSlice({
       }
       if (document.getElementsByTagName('button')?.length > 0){
         for(let i=0;i<=document.getElementsByTagName('button').length;i++) { // console.log(constant['themes'][theme]?.button)
-          document.getElementsByTagName('button')[0].style.background = constant['themes'][theme]?.button;
+          // document.getElementsByTagName('button')[0].style.background = constant['themes'][theme]?.button;
         }
       }
     },

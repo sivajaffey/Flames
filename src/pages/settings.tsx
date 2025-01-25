@@ -13,6 +13,11 @@ const Settings = (props) => {
     const state:any = useSelector((state)=>state);
     const [vwHis, setView] = useState(JSON.parse(localStorage.getItem('historyData')) || [])
     const [timer, setTimer] = useState(0);
+    const style = {
+        background: constant['themes'][state?.theme]?.header,
+        color:constant['themes'][state?.theme]?.color,
+        // label:constant['themes'][state?.theme]?.color,
+    }
         const setLanguage = (e:any) => {
                 dispatch(setLang(e));
         }   
@@ -69,19 +74,19 @@ const Settings = (props) => {
                         {
                             listItemText:true,
                             primaryTitle:constant?.lang[state?.lang]?.langHeader, 
-                            primaryDesc: <SelectInput list={list()} value={state?.lang} change={handleChange} class={'settings-menu'}/>
+                            primaryDesc: <SelectInput style={style} list={list()} value={state?.lang} change={handleChange} class={'settings-menu'}/>
                         }, 
                         {
                             listItemText:true,
                             primaryTitle:constant?.lang[state?.lang]?.themeSelect, 
-                            primaryDesc: <SelectInput list={getThemeList()} value={state?.theme} change={handleTheme} class={'settings-menu'}/>
+                            primaryDesc: <SelectInput style={style} list={getThemeList()} value={state?.theme} change={handleTheme} class={'settings-menu'}/>
                         },
                         {
                             listItemText:true,
                             primaryTitle:<>
                                 {constant?.lang[state?.lang]?.history} {vwHis.length > 0 && <span style={{'color':'blue'}} onClick={()=>dispatch(setPage(4))}>(<u >{constant?.lang[state?.lang]?.view}</u>)</span>}
                             </>, 
-                            primaryDesc: <SelectInput list={[
+                            primaryDesc: <SelectInput style={style} list={[
                                 {id:1, value: constant.lang[state?.lang].on},
                                 {id:0, value: constant.lang[state?.lang].off}
                             ]} value={state?.history} change={turnHistory} class={'settings-menu'}/>
@@ -92,7 +97,7 @@ const Settings = (props) => {
                 </>
             } />
         }
-        {timer === 0 && <div>
+        {timer === 0 && <div style={{color: style.color}}>
             {constant?.lang[state?.lang]?.loading}
         </div>}
         </>

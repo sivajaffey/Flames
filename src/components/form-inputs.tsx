@@ -2,7 +2,7 @@ import { Select, MenuItem, TextField, Button } from '@mui/material';
 import React from 'react';
 
 export const ButtonField = (props) => {
-    return <Button className={props.class ? props.class : 'submit-btn pushable'} variant={props.variant ? props?.variant : "contained"} onClick={props?.click}>
+    return <Button {...props} className={props.class ? props.class : 'submit-btn pushable'} variant={props.variant ? props?.variant : "contained"} onClick={props?.click}>
                 <span className={props?.subclass ? props?.subclass : 'front'}>{props?.text}</span>
             </Button>
 }
@@ -12,7 +12,7 @@ export const TextInput = (props) => {
 }
 
 export const SelectInput = (props) => {
-    return <Select className={props.class ? props?.class : 'lang-select'} onChange={props?.change} value={props?.value} >
+    return <Select {...props} className={props.class ? props?.class : 'lang-select'} onChange={props?.change} value={props?.value} >
                 {props.list.map(data=>{
                     return <MenuItem value={data.id}>{data.value}</MenuItem>
                 })}

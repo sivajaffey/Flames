@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { playSounds } from "../config/music";
 import { Content, ListItems } from "../components/ui-elements";
 import React from "react";
 import Footer from "../components/footer";
-import { setLang, setTheme, setPage } from "../config/redux/store";
-import { ButtonField, SelectInput } from "../components/form-inputs";
 import { constant } from "../config/lang";
 
 const History = (props) => {
