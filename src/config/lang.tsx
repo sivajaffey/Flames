@@ -216,9 +216,9 @@ export const constant = {
     themes: {
         "basic": {
             background: "url('../assets/img/background.jpg')",
-            header:"hsl(340deg 100% 32%)",
+            header:"rgb(176 8 19)",
             color:'white',
-            button:"hsl(340deg 100% 32%)",
+            button:"rgb(176 8 19)",
         },
         "lite": {
             background: "url('../assets/img/lite.jpg')",
