@@ -11,6 +11,11 @@ import { setHistoryList } from "../config/redux/store";
 const Result = (props) => {
     const dispatch = useDispatch();
     const state:any = useSelector((state)=>state);
+     const style = {
+                background:constant['themes'][state.theme]?.primaryColor,
+                color:constant['themes'][state.theme]?.secondaryColor,
+                "border-radius":"5%"
+            }
     useEffect(()=>{
         if (state?.flames !== '') {
             playSounds(state?.flames)
@@ -20,9 +25,9 @@ const Result = (props) => {
         }
     },[])
     return <>
-        <Content content={
+        <Content style={style} content={
             <><Header />
-                <PaperEl content={(state?.bname !== '' && state?.gname  !== '') && <div className="result">
+                <PaperEl style={style} content={(state?.bname !== '' && state?.gname  !== '') && <div className="result">
                     <H1 class="result-res" text={constant['flames'][state?.lang][state?.flames]} />
                 <p><label className="res-label">{constant['lang'][state?.lang]?.bname}:</label> <b className="wrap-text">{state?.bname}</b></p>
                 <p><label className="res-label">{constant['lang'][state?.lang]?.gname}:</label> <b className="wrap-text">{state?.gname}</b></p>

@@ -8,6 +8,10 @@ import { constant } from "../config/lang";
 const Footer = (props) => {
     const state:any = useSelector(state=>state);
     const dispatch = useDispatch();
+    const style = {
+        background:constant['themes'][state.theme]?.primaryColor,
+        color:constant['themes'][state.theme]?.secondaryColor,
+    }
     const clear = () => {
         clickSound();
         dispatch(clearData());
@@ -18,9 +22,9 @@ const Footer = (props) => {
     }
     return <>
         <div className="footer">
-            {state.page === 4 && <ButtonField style={{background:constant['themes'][state.theme]?.header}} class={'top-right'} click={()=>clearHistory()} text={constant.lang[state?.lang].clear} />}
-            {props?.back == 'back' ? <ButtonField style={{background:constant['themes'][state.theme]?.header}} className='submit-btn pushable' variant="contained" click={()=>clear()} text={<span className='front'>{constant['lang'][state.lang].goBack}</span>}/> : 
-            <ButtonField className='submit-btn pushable' style={{background:constant['themes'][state.theme]?.header}} variant="contained" click={props.submit} text={<span className='front'>{constant['lang'][state.lang].submitBtn}</span>} />}
+            {state.page === 4 && <ButtonField style={style} class={'top-right'} click={()=>clearHistory()} text={constant.lang[state?.lang].clear} />}
+            {props?.back == 'back' ? <ButtonField style={style} className='submit-btn pushable' variant="contained" click={()=>clear()} text={<span className='front'>{constant['lang'][state.lang].goBack}</span>}/> : 
+            <ButtonField className='submit-btn pushable' style={style} variant="contained" click={props.submit} text={<span className='front'>{constant['lang'][state.lang].submitBtn}</span>} />}
         </div>
     </>
 }

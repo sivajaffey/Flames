@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
+.css-b7dj7n-MuiList-root {
+  width: 100% !important;
+}
 .settings-icon {
   right: 5%;
   position: fixed;
@@ -25,12 +28,10 @@ code {
   left: 0;
   top: 12%;
   span {
-    color: white;
     font-weight: bold;
   }
   
   .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-    color: white;
     font-weight: bold;
   }
 }
@@ -39,31 +40,6 @@ code {
   overflow: auto;
     height: 80%;
 }
-/* .field-name {
-  color: aliceblue;
-}
-.css-1ll44ll-MuiOutlinedInput-notchedOutline {
-  border-color: white;
-}
-fieldset * {
-  color:white !important
-} */
-.css-1xp5r68-MuiFormControl-root-MuiTextField-root * {
-  color: white !important;
-}
-.css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root { /*label in input */
- /* color: white !important; */
-}
 .css-1fzlhpv-MuiGrid2-root {
-  /* border: 1px dotted; */
   padding-bottom: 1%;
-}
-input::placeholder {
-  /* color:white !important */
-}
-.css-14ln1j6-MuiListItemText-root .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
-  /* color: white !important; */
-}
-.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-  color: black;
 }

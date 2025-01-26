@@ -12,9 +12,11 @@ const Home = () => {
   const state:any = useSelector((state)=>state);
   const [formValue, setFormValues] = useState();
   const style = {
-          background: constant['themes'][state?.theme]?.header,
-          // color:constant['themes'][state?.theme]?.color,
-          // label:constant['themes'][state?.theme]?.color,
+          background: constant['themes'][state?.theme]?.primaryColor,
+          color:constant['themes'][state?.theme]?.secondaryColor,
+          "padding-bottom": "5%",
+          "padding-top": "1%",
+          "border-radius":"5%"
       }
   const form = [
     {
@@ -56,7 +58,7 @@ const Home = () => {
     return <>
         <Content class={'home-page'} content={
             <>
-            <Form formfields={form} formData={(e)=>setFormValues(e)}/>
+            <Form style={style} formfields={form} formData={(e)=>setFormValues(e)}/>
             <Footer submit={()=>submitNames(formValue)}/>
         </>
         }/>

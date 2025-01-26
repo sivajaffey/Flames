@@ -4,13 +4,16 @@ import { TextField, Container, Grid2, AppBar, Toolbar, Paper, List, ListItemAvat
 export const H1 = (props) => {
     return <h1 className={props?.class}>{props?.text}</h1>
 }
+export const H4 = (props) => {
+    return <h4 {...props} className={props?.class}>{props?.text}</h4>
+}
 
 export const textInput = (props) => {
     return <TextField autoComplete={props?.autoComplete ? props?.autoComplete : 'off'} id="outlined-basic" label={props?.label} variant={props?.variant ? props.variant : "outlined"}  type={props?.type} placeholder={props?.placeholder} onKeyUp={(e)=> props?.keyup(e)}/>
 }
 
 export const Content = (props) => {
-    return <Container className={props?.class}>{props?.content}</Container>
+    return <Container {...props} className={props?.class}>{props?.content}</Container>
 }
 
 export const Grid = (props) => {
@@ -22,13 +25,24 @@ export const NavBar = (props) => {
 }
 
 export const NavToolBar = (props) => {
-    return <Toolbar className={props?.class}>{props?.content}</Toolbar>
+    return <Toolbar {...props} className={props?.class}>{props?.content}</Toolbar>
 }
 
 export const PaperEl = (props) => {
     // return <Paper className={props?.class}>
         return props?.content
         {/* </Paper> */}
+}
+
+export const Paragraph = (props) => {
+    return <Typography
+                component="span"
+                variant="body2"
+                sx={{ color: 'text.primary', display: 'inline' }}
+                {...props}
+            >
+            {props?.desc}
+    </Typography>
 }
 
 export const ListItems = (props) => {

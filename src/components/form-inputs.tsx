@@ -8,7 +8,9 @@ export const ButtonField = (props) => {
 }
 
 export const TextInput = (props) => {
-    return <TextField className={props?.class} autoComplete={props.autoComplete ? props.autoComplete : 'off'} id="outlined-basic" label={props.label} variant={props.variant ? props.variant : "outlined"}  type={props.type ? props.type : "text"} placeholder={props.placeholder ? props.placeholder : "...."} onChange={(e)=> props?.change(e)}/>
+    return <><label>{props?.label}</label>
+    <TextField {...props} className={props?.class} autoComplete={props.autoComplete ? props.autoComplete : 'off'} id="outlined-basic" variant={props?.variant ? props.variant : "standard"}  type={props?.type ? props.type : "text"} placeholder={props?.placeholder ? props.placeholder : "...."} onChange={(e)=> props?.change(e)}/>
+    </>
 }
 
 export const SelectInput = (props) => {

@@ -7,13 +7,17 @@ import { Settings } from '@mui/icons-material';
 
 const Header = () => {
     const state:any = useSelector((state)=>state);
+    const style = {
+            background:constant['themes'][state.theme]?.primaryColor,
+            color:constant['themes'][state.theme]?.secondaryColor,
+        }
     const dispatch = useDispatch();
     useEffect(()=>{
         
     },[])
     return  <NavBar content={
             
-            <NavToolBar content={<>
+            <NavToolBar style={style} content={<>
                 <H1 text={constant['lang'][state.lang].title}/>
                 {state.page == 0 && <Settings className="settings-icon" onClick={()=>dispatch(setPage(2))}/>}
                 </>

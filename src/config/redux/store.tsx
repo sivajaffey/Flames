@@ -41,14 +41,6 @@ const counterSlice = createSlice({
       if (appLock) {
         appLock.style.background= ''+constant['themes'][theme]?.background+'';
       }
-      if (document.getElementsByTagName('header')?.length > 0){
-        document.getElementsByTagName('header')[0].style.background = constant['themes'][theme]?.header;
-      }
-      if (document.getElementsByTagName('button')?.length > 0){
-        for(let i=0;i<=document.getElementsByTagName('button').length;i++) { // console.log(constant['themes'][theme]?.button)
-          // document.getElementsByTagName('button')[0].style.background = constant['themes'][theme]?.button;
-        }
-      }
     },
     setHistoryList: (state,action)=>{
       console.log(action.payload)
