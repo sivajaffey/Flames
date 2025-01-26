@@ -1,4 +1,6 @@
-<img width="326" alt="Screenshot 2025-01-26 at 11 34 05 AM" src="https://github.com/user-attachments/assets/fe3d7751-5181-4ac1-ab9c-29a9393a7f5e" /># Flames
+<img width="326" alt="Screenshot 2025-01-26 at 11 34 05 AM" src="https://github.com/user-attachments/assets/fe3d7751-5181-4ac1-ab9c-29a9393a7f5e" />
+
+# Flames
 "Flames" A fun astrology game played in my childhood which finds match between boy and girl. 
 this is developed using react 18 and redux. 
 deployed in android link added below
@@ -25,7 +27,6 @@ URL: https://sivaraman.business.blog/flames
 Link: https://play.google.com/store/apps/details?id=com.sr.flamesapp
 
 # screenshot
-<img width="326" alt="Screenshot 2025-01-26 at 11 38 53 AM" src="https://github.com/user-attachments/assets/6c3061e6-6747-4ec7-a5a2-020f5a82ac5d" />
 <img width="326" alt="Screenshot 2025-01-26 at 11 34 23 AM" src="https://github.com/user-attachments/assets/4cb57f4d-2772-4df1-955c-30985700c9a9" />
 <img width="326" alt="Screenshot 2025-01-26 at 11 34 05 AM" src="https://github.com/user-attachments/assets/8fc936b1-e2b6-46ec-ad38-75ecb0680edb" />
 <img width="326" alt="Screenshot 2025-01-26 at 11 34 00 AM" src="https://github.com/user-attachments/assets/355c19c9-8ad1-497c-9030-844bf4bf0361" />
