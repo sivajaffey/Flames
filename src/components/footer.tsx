@@ -11,6 +11,7 @@ const Footer = (props) => {
     const style = {
         background:constant['themes'][state.theme]?.primaryColor,
         color:constant['themes'][state.theme]?.secondaryColor,
+        margin:"2px"
     }
     const clear = () => {
         clickSound();
@@ -22,7 +23,7 @@ const Footer = (props) => {
     }
     return <>
         <div className="footer">
-            {state.page === 4 && <ButtonField style={style} class={'top-right'} click={()=>clearHistory()} text={constant.lang[state?.lang].clear} />}
+            {state?.page === 4 && <ButtonField style={style} click={()=>clearHistory()} text={constant.lang[state?.lang].clear} />}
             {props?.back == 'back' ? <ButtonField style={style} className='submit-btn pushable' variant="contained" click={()=>clear()} text={<span className='front'>{constant['lang'][state.lang].goBack}</span>}/> : 
             <ButtonField className='submit-btn pushable' style={style} variant="contained" click={props.submit} text={<span className='front'>{constant['lang'][state.lang].submitBtn}</span>} />}
         </div>

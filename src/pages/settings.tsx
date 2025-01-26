@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { playSounds } from "../config/music";
+import { clickSound, playSounds } from "../config/music";
 import { Content, ListItems } from "../components/ui-elements";
 import React from "react";
 import Footer from "../components/footer";
@@ -18,21 +18,24 @@ const Settings = (props) => {
     }
         const setLanguage = (e:any) => {
                 dispatch(setLang(e));
+                clickSound();
         }   
 
         const handleChange = (event: any) => {
             localStorage.setItem('lang',event.target.value)
-            setLanguage(event.target.value)
+            setLanguage(event.target.value);
         };
 
         const handleTheme = (event: any) => {
-            localStorage.setItem('theme',event.target.value)
-            dispatch(setTheme(event.target.value))
+            localStorage.setItem('theme',event.target.value);
+            dispatch(setTheme(event.target.value));
+            clickSound();
         }
 
         const turnHistory = (e) => {
             localStorage.setItem('history',e.target.value)
-            dispatch(setHistory(e?.target?.value))
+            dispatch(setHistory(e?.target?.value));
+            clickSound();
         }
 
         const list = () => {
