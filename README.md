@@ -22,9 +22,11 @@ website : https://sivaraman.business.blog/
 
 URL: https://sivaraman.business.blog/flames
 
-# Available in android
+# Available on Web
+URL: https://flames-web.netlify.app/
 
-Link: https://play.google.com/store/apps/details?id=com.sr.flamesapp
+# Available in android
+URL: https://play.google.com/store/apps/details?id=com.sr.flamesapp
 
 # screenshot
 
