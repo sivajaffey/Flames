@@ -25,7 +25,8 @@ export const constant = {
                 theme:{
                    basic:"Basic", 
                    lite:"Lite"
-                }
+                },
+                calFlames:"Calculating flames"
             },
             'fr' : {
                 lang:'Français',
@@ -52,7 +53,8 @@ export const constant = {
                 theme:{
                    basic:"Basique", 
                    lite:"Légère"
-                }
+                },
+                calFlames:"Calculating flames"
             },
             'span':{
                 lang:'Española',
@@ -79,7 +81,8 @@ export const constant = {
                 theme:{
                    basic:"Básica", 
                    lite:"Ligera"
-                }
+                },
+                calFlames:"Calculating flames"
             },
             'jpan':{
                 lang:'日本語',
@@ -106,7 +109,8 @@ export const constant = {
                 theme:{
                    basic:"基本", 
                    lite:"ライト"
-                }
+                },
+                calFlames:"Calculating flames"
             },
             'chin':{
                 lang:'中国人',
@@ -133,7 +137,8 @@ export const constant = {
                 theme:{
                    basic:"基本的", 
                    lite:"精简版"
-                }
+                },
+                calFlames:"Calculating flames"
             },
             'kor':{
                 lang:'한국인',
@@ -160,8 +165,12 @@ export const constant = {
                 theme:{
                    basic:"기초적인", 
                    lite:"라이트"
-                }
+                },
+                calFlames:"Calculating flames"
             }
+    },
+    loaderImg:{
+        flamesLoader:"../assets/img/loading.gif"
     },
     flames: {
             'en' : {
@@ -216,13 +225,13 @@ export const constant = {
     themes: {
         "basic": {
             background: "url('../assets/img/background.jpg')",
-            primaryColor:'#ffff00',
-            secondaryColor:'#3c523c'
+            primaryColor:'#f2a65a',
+            secondaryColor:'#f1e1c6'
         },
         "lite": {
             background: "url('../assets/img/lite.jpg')",
-            primaryColor:'rgb(62 128 232)',
-            secondaryColor:'#ffffff'
+            primaryColor:'#4db8b8',
+            secondaryColor:'white'
         },
         "f": {
             background: "url('../assets/img/f-bg.jpg')",
@@ -233,11 +242,13 @@ export const constant = {
             background: "url('../assets/img/l-bg.jpg')",
             primaryColor:"rgb(167 89 175)",
             secondaryColor:'#ffffff',
+            effects:"../assets/img/l-jump.gif"
         },
         "a": {
             background: "url('../assets/img/a-bg.jpg')",
             primaryColor:"rgb(77 163 63)",
             secondaryColor:'#ffffff',
+            effects:"../assets/img/a-dance.gif"
         },
         "m":{
             background: "url('../assets/img/m-bg.jpg')",

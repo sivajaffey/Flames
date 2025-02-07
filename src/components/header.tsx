@@ -19,7 +19,7 @@ const Header = () => {
             
             <NavToolBar style={style} content={<>
                 <H1 text={constant['lang'][state.lang].title}/>
-                {state.page == 0 && <Settings className="settings-icon" onClick={()=>dispatch(setPage(2))}/>}
+                {state.screenLoader?.show === false && state.page === 0 && <Settings className="settings-icon" onClick={()=>dispatch(setPage(2))}/>}
                 </>
             }/>
         } />

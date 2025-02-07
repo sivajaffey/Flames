@@ -1,5 +1,7 @@
 import React from 'react';
-import { TextField, Container, Grid2, AppBar, Toolbar, Paper, List, ListItemAvatar, Avatar, Typography, ListItemText, ListItem, Divider } from '@mui/material';
+import { TextField, Container, Grid2, AppBar, Toolbar, List, ListItemAvatar, Avatar, Typography, ListItemText, ListItem, Divider, Card, CardContent, CardActions, CardMedia } from '@mui/material';
+import { constant } from '../config/lang';
+import { useSelector } from 'react-redux';
 
 export const H1 = (props) => {
     return <h1 className={props?.class}>{props?.text}</h1>
@@ -79,4 +81,29 @@ export const ListItems = (props) => {
             </>
         }) : []}
     </List>
+}
+
+export const Loader = (props) => {
+    const state:any = useSelector((state)=>state);
+    return <>
+        <Card style={{background: constant.themes[state.theme].background}} className={props.className} variant="outlined">
+            <CardContent>
+            {props?.image && <Typography justifyItems={'center'} textAlign='center' gutterBottom variant="h4" component="div">
+                <CardMedia
+                sx={{ height: 140 }}
+                image={props?.image}
+            />
+            </Typography>}
+            {props?.title && <Typography style={{color: constant.themes[state?.theme]?.secondaryColor}} className='blink'  textAlign='center' gutterBottom variant="h4" component="div">
+            {props?.title}
+            </Typography>}
+            {props?.message && <Typography style={{color: constant.themes[state?.theme]?.primaryColor, fontStyle:'italic'}} textAlign='center' gutterBottom variant="h5" component="div">
+            {props?.message}
+            </Typography>}
+            </CardContent>
+            {props?.action && <CardActions>
+                {props?.action}
+            </CardActions>}
+        </Card>
+    </>
 }

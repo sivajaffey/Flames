@@ -6,6 +6,7 @@ import Settings from '../pages/settings';
 import History from '../pages/history';
 import CustomFlames from '../pages/customFlames';
 import Header from "../components/header";
+import { Loader } from "../components/ui-elements";
 
 const CustomRoute = (props) => {
 const state:any = useSelector((state)=>state);
@@ -16,9 +17,11 @@ const Router = [
   {id : 3 , component: <CustomFlames /> },
   {id : 4 , component: <History /> },
 ]
- return <>
+
+return <>
+  {state.screenLoader?.show && <Loader className={'loader-screen'} {...state.screenLoader} />}
   <Header />
-   {Router.filter(route=>route.id == state?.page).length > 0 ? Router.filter(route=>route.id == state?.page)[0].component : 'No Page Found'}
+   {Router.filter(route=>route.id === state?.page).length > 0 ? Router.filter(route=>route.id === state?.page)[0].component : 'No Page Found'}
  </>
 }
 

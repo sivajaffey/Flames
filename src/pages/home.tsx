@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clickSound } from "../config/music";
 import { constant } from "../config/lang";
-import { submit } from "../config/redux/store";
+import { showLoader, submit } from "../config/redux/store";
 import { Content } from "../components/ui-elements";
 import React from 'react';
 import Form from "../components/form";
@@ -47,7 +47,14 @@ const Home = () => {
             if (e.gname?.trim() !== '' && e.bname?.trim() !== '') {
               // let gname1 = e.gname?.replace(/[&\/\\#, +()$~%.@!%^&*_+='":*?<>{}]/g, '');
               // let bname1 = e.bname?.replace(/[&\/\\#, +()$~%.@!%^&*_+='":*?<>{}]/g, '');
-              dispatch(submit({'gname':e.gname?.trim(),'bname':e.bname?.trim()}));
+              const submitFlames = (e) => {
+                dispatch(submit({'gname':e.gname?.trim(),'bname':e.bname?.trim()}));
+              }
+              dispatch(showLoader({show:true, title: `${constant.lang[state.lang].calFlames}`, message: `${e.bname} & ${e.gname}`, image:constant?.loaderImg?.flamesLoader})) // loader function start
+              setTimeout(()=>{
+                dispatch(showLoader({show:false, title: '', message: '', image: ''})) // loader function stop
+                submitFlames(e)
+              },5000)
             }
     } else {
       alert(constant['lang'][state.lang].error)

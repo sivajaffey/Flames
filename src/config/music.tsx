@@ -4,20 +4,23 @@ export const clickSound = () => {
 }
 
 export const playSounds = (val) => {
-    let aud;
-    if (val== 'a' || val=='l') {
-        aud = 'l.mp3'
-    } else if (val == 'f') {
-        aud = 'f.mp3'
-    } else if (val == 'm') {
-        aud = 'm.wav'
-    } else if (val == 'e') {
-        aud = 'e.wav'
-    } else if (val == 's') {
-        aud = 's.mp3'
+    let aud = new Audio(`../assets/sounds/click.wav`);
+    if (val=== 'a' || val==='l') {
+        aud = new Audio(`../assets/sounds/l.mp3`);
+        aud?.play()
+    } else if (val === 'f') {
+        aud = new Audio(`../assets/sounds/f.mp3`);
+        aud?.play()
+    } else if (val === 'm') {
+        aud = new Audio(`../assets/sounds/m.wav`);
+        aud?.play()
+    } else if (val === 'e') {
+        aud = new Audio(`../assets/sounds/e.wav`);
+        aud?.play()
+    } else if (val === 's') {
+        aud = new Audio(`../assets/sounds/s.mp3`);
+        aud?.play()
     } else {
-        aud = 'click.wav'
+        aud?.play()
     }
-    const audioTune = new Audio(`../assets/sounds/${aud}`);
-    audioTune?.play();
 }

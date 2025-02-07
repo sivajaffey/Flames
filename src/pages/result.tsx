@@ -32,8 +32,7 @@ const Result = (props) => {
                 <p><label className="res-label">{constant['lang'][state?.lang]?.bname}:</label> <b className="wrap-text">{state?.bname}</b></p>
                 <p><label className="res-label">{constant['lang'][state?.lang]?.gname}:</label> <b className="wrap-text">{state?.gname}</b></p>
             </div> } />
-            
-                <img src={`../assets/img/${state?.flames}.gif`} height={200} width={200}/>
+                <img src={`../assets/img/${state?.flames}.gif`} height={200} width={200}/> 
             <Footer back={'back'}/>
             </>
         } />

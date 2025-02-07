@@ -1,7 +1,9 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
 import {constant} from '../lang'
+
 let Game = "flames";
 let theme = "basic";
+
 const counterSlice = createSlice({
   name: 'Flames',
   initialState: {
@@ -12,7 +14,8 @@ const counterSlice = createSlice({
     page:0,
     theme: theme,
     history:0,
-    historyList:[]
+    historyList:[],
+    screenLoader:{show: false}
   },
   reducers: {
     clearData:(state)=>{
@@ -24,6 +27,9 @@ const counterSlice = createSlice({
     },
     setLang:(state,action)=>{
       state.lang = action.payload;
+    },
+    showLoader:(state,action)=>{
+      state.screenLoader = action?.payload || {};
     },
     setPage:(state,action)=>{
       state.page = action.payload;
@@ -43,7 +49,7 @@ const counterSlice = createSlice({
       }
     },
     setHistoryList: (state,action)=>{
-      console.log(action.payload)
+      // console.log(action.payload)
       state.historyList = action.payload;
     }, 
     submit: (state,action) =>{
@@ -58,7 +64,7 @@ const counterSlice = createSlice({
             array = JSON.parse(localStorage.getItem('historyData')) || []
           }
           
-          console.log(array)
+          // console.log(array)
           let flameObj={
             bname:state.bname,
             gname:state.gname,
@@ -146,12 +152,12 @@ const counterSlice = createSlice({
           setHistory();
             // setFlames('f') // setting default if both names same charectors with same length
         }
-        state.page = 1;
+          state.page = 1;
       }
   }
 })
 
-export const { submit, setLang, setFlames, clearData, setTheme, setPage, setHistory, setHistoryList } = counterSlice.actions
+export const { submit, setLang, setFlames, clearData, setTheme, setPage, setHistory, setHistoryList, showLoader } = counterSlice.actions
 
 export const store = configureStore({
   reducer: counterSlice.reducer
