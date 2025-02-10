@@ -14,7 +14,7 @@ const Settings = (props) => {
     const [vwHis, setView] = useState(JSON.parse(localStorage.getItem('historyData')) || [])
     const [timer, setTimer] = useState(0);
     const style = {
-        color:constant['themes'][state?.theme]?.primaryColor,
+        color:constant['themes'][state?.theme]?.secondaryColor,
     }
         const setLanguage = (e:any) => {
                 dispatch(setLang(e));

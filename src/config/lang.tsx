@@ -54,7 +54,7 @@ export const constant = {
                    basic:"Basique", 
                    lite:"Légère"
                 },
-                calFlames:"Calcul des flammes"
+                calFlames:"Calculating flames"
             },
             'span':{
                 lang:'Española',
@@ -82,7 +82,7 @@ export const constant = {
                    basic:"Básica", 
                    lite:"Ligera"
                 },
-                calFlames:"Calculando llamas"
+                calFlames:"Calculating flames"
             },
             'jpan':{
                 lang:'日本語',
@@ -110,7 +110,7 @@ export const constant = {
                    basic:"基本", 
                    lite:"ライト"
                 },
-                calFlames:"炎の計算"
+                calFlames:"Calculating flames"
             },
             'chin':{
                 lang:'中国人',
@@ -138,7 +138,7 @@ export const constant = {
                    basic:"基本的", 
                    lite:"精简版"
                 },
-                calFlames:"计算火焰"
+                calFlames:"Calculating flames"
             },
             'kor':{
                 lang:'한국인',
@@ -166,7 +166,7 @@ export const constant = {
                    basic:"기초적인", 
                    lite:"라이트"
                 },
-                calFlames:"불꽃 계산"
+                calFlames:"Calculating flames"
             }
     },
     loaderImg:{
@@ -225,8 +225,8 @@ export const constant = {
     themes: {
         "basic": {
             background: "url('../assets/img/background.jpg')",
-            primaryColor:'#f2a65a',
-            secondaryColor:'#f1e1c6'
+            primaryColor:'#DC143C',
+            secondaryColor:'white'
         },
         "lite": {
             background: "url('../assets/img/lite.jpg')",
