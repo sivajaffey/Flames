@@ -15,9 +15,9 @@ const Header = () => {
     useEffect(()=>{
         
     },[])
-    return  <NavBar content={
-            
+    return  <NavBar content={ 
             <NavToolBar style={style} content={<>
+                <img src={constant.logo} height={50} width={50} style={{'padding-right':'2%'}} />
                 <H1 text={constant['lang'][state.lang].title}/>
                 {state.screenLoader?.show === false && state.page === 0 && <Settings className="settings-icon" onClick={()=>dispatch(setPage(2))}/>}
                 </>

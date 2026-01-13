@@ -1,5 +1,178 @@
 export const constant = {
+    version:'1.0.5',
+    logo:'../assets/img/logo.png',
+    webAppUrl:'flames-web.netlify.app',
     lang: {
+        // 'ta':{
+        //     "lang": "தமிழ்",
+        //     "title": "Flames",
+        //     "subtitle": "மகிழுங்கள்!",
+        //     "bname": "பையன் பெயர்",
+        //     "bnamePlc": "பையனின் பெயரை உள்ளிடவும்..",
+        //     "gname": "பெண் பெயர்",
+        //     "gnamePlc": "பெண் பெயரை உள்ளிடவும்..",
+        //     "submitBtn": "பொருத்தத்தைக் கண்டறியவும்",
+        //     "goBack": "திரும்பி செல்",
+        //     "error": "குறைந்தபட்சம் 4 எழுத்துகள் அதிகபட்சம் 20 எழுத்துகளை உள்ளிடவும்",
+        //     "customFlames": "தனிப்பயன் Flames",
+        //     "pageNotAvailable": "பக்கம் எதுவும் கிடைக்கவில்லை",
+        //     "langHeader": "உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்",
+        //     "themeSelect": "உங்கள் தீம் தேர்ந்தெடுக்கவும்",
+        //     "history": "வரலாறு",
+        //     "view": "காண்க",
+        //     "clear": "தெளிவான வரலாறு",
+        //     "noData": "தரவு எதுவும் கிடைக்கவில்லை",
+        //     "on": "இயக்கவும்",
+        //     "off": "அணைக்க",
+        //     "loading": "ஏற்றுகிறது...",
+        //     "theme": {
+        //         "basic": "அடிப்படை",
+        //         "lite": "லைட்",
+        //         "dw": "டெட்பூல் & வால்வரின்",
+        //         "sp": "சூப்பர்மேன்"
+        //     },
+        //     "calFlames": "Flames கணக்கிடுதல்",
+        //     "download": "Flames நிறுவவும்",
+        //     "share": "பகிரவும்",
+        //     "version": "பதிப்பு",
+        //     "dev": "டெவலப்பர்"
+        //     },
+        // 'te':{
+        //     "lang": "తమిళం",
+        //     "title": "Flames",
+        //     "subtitle": "ఆనందించండి!",
+        //     "bname": "అబ్బాయి పేరు",
+        //     "bnamePlc": "అబ్బాయి పేరు నమోదు చేయండి..",
+        //     "gname": "అమ్మాయి పేరు",
+        //     "gnamePlc": "అమ్మాయి పేరు నమోదు చేయండి..",
+        //     "submitBtn": "సరిపోలికను కనుగొనండి",
+        //     "goBack": "వెనక్కి వెళ్ళు",
+        //     "error": "దయచేసి కనిష్టంగా 4 అక్షరాలు గరిష్టంగా 20 అక్షరాలు నమోదు చేయండి",
+        //     "customFlames": "కస్టమ్ Flames",
+        //     "pageNotAvailable": "పేజీ అందుబాటులో లేదు",
+        //     "langHeader": "మీ భాషను ఎంచుకోండి",
+        //     "themeSelect": "మీ థీమ్‌ని ఎంచుకోండి",
+        //     "history": "చరిత్ర",
+        //     "view": "చూడండి",
+        //     "clear": "చరిత్రను క్లియర్ చేయండి",
+        //     "noData": "డేటా ఏదీ కనుగొనబడలేదు",
+        //     "on": "ఆన్ చేయండి",
+        //     "off": "ఆఫ్ చేయండి",
+        //     "loading": "లోడ్ అవుతోంది...",
+        //     "theme": {
+        //         "basic": "ప్రాథమిక",
+        //         "lite": "లైట్",
+        //         "dw": "డెడ్‌పూల్ & వుల్వరైన్",
+        //         "sp": "సూపర్మ్యాన్"
+        //     },
+        //     "calFlames": "Flames లెక్కిస్తోంది",
+        //     "download": "Flames ఇన్స్టాల్ చేయండి",
+        //     "share": "షేర్ చేయండి",
+        //     "version": "వెర్షన్",
+        //     "dev": "డెవలపర్"
+        //     },
+        // 'kn':{
+        //     "lang": "ತಮಿಳು",
+        //     "title": "Flames",
+        //     "subtitle": "ಆನಂದಿಸಿ!",
+        //     "bname": "ಹುಡುಗನ ಹೆಸರು",
+        //     "bnamePlc": "ಹುಡುಗನ ಹೆಸರನ್ನು ನಮೂದಿಸಿ..",
+        //     "gname": "ಹುಡುಗಿಯ ಹೆಸರು",
+        //     "gnamePlc": "ಹುಡುಗಿಯ ಹೆಸರನ್ನು ನಮೂದಿಸಿ..",
+        //     "submitBtn": "ಹೊಂದಾಣಿಕೆಯನ್ನು ಹುಡುಕಿ",
+        //     "goBack": "ಹಿಂತಿರುಗಿ",
+        //     "error": "ದಯವಿಟ್ಟು ಕನಿಷ್ಠ 4 ಅಕ್ಷರಗಳ ಗರಿಷ್ಠ 20 ಅಕ್ಷರಗಳನ್ನು ನಮೂದಿಸಿ",
+        //     "customFlames": "ಕಸ್ಟಮ್ Flames",
+        //     "pageNotAvailable": "ಯಾವುದೇ ಪುಟ ಲಭ್ಯವಿಲ್ಲ",
+        //     "langHeader": "ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        //     "themeSelect": "ನಿಮ್ಮ ಥೀಮ್ ಆಯ್ಕೆಮಾಡಿ",
+        //     "history": "ಇತಿಹಾಸ",
+        //     "view": "ವೀಕ್ಷಿಸಿ",
+        //     "clear": "ಇತಿಹಾಸವನ್ನು ತೆರವುಗೊಳಿಸಿ",
+        //     "noData": "ಯಾವುದೇ ಡೇಟಾ ಕಂಡುಬಂದಿಲ್ಲ",
+        //     "on": "ಆನ್ ಮಾಡಿ",
+        //     "off": "ಆಫ್ ಮಾಡಿ",
+        //     "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+        //     "theme": {
+        //         "basic": "ಮೂಲಭೂತ",
+        //         "lite": "ಲೈಟ್",
+        //         "dw": "ಡೆಡ್‌ಪೂಲ್ ಮತ್ತು ವೊಲ್ವೆರಿನ್",
+        //         "sp": "ಸೂಪರ್‌ಮ್ಯಾನ್"
+        //     },
+        //     "calFlames": "Flames ಲೆಕ್ಕಾಚಾರ",
+        //     "download": "Flames ಸ್ಥಾಪಿಸಿ",
+        //     "share": "ಹಂಚಿಕೊಳ್ಳಿ",
+        //     "version": "ಆವೃತ್ತಿ",
+        //     "dev": "ಡೆವಲಪರ್"
+        //     },
+        // 'hi':{
+        //     "lang": "अंग्रेज़ी",
+        //     "title": "Flames",
+        //     "subtitle": "मस्ती करो!",
+        //     "bname": "लड़के का नाम",
+        //     "bnamePlc": "लड़के का नाम दर्ज करें..",
+        //     "gname": "लड़की का नाम",
+        //     "gnamePlc": "लड़की का नाम दर्ज करें..",
+        //     "submitBtn": "मिलान खोजें",
+        //     "goBack": "वापस जाओ",
+        //     "error": "कृपया न्यूनतम 4 अक्षर अधिकतम 20 अक्षर दर्ज करें",
+        //     "customFlames": "कस्टम Flames",
+        //     "pageNotAvailable": "कोई पेज उपलब्ध नहीं",
+        //     "langHeader": "अपनी भाषा का चयन करें",
+        //     "themeSelect": "अपनी थीम चुनें",
+        //     "history": "इतिहास",
+        //     "view": "देखना",
+        //     "clear": "इतिहास मिटा दें",
+        //     "noData": "डाटा प्राप्त नहीं हुआ",
+        //     "on": "चालू करो",
+        //     "off": "बंद करें",
+        //     "loading": "लोड हो रहा है...",
+        //     "theme": {
+        //         "basic": "बुनियादी",
+        //         "lite": "लाइट",
+        //         "dw": "डेडपूल और वूल्वरिन",
+        //         "sp": "अतिमानव"
+        //     },
+        //     "calFlames": "Flames की गणना",
+        //     "download": "Flames स्थापित करें",
+        //     "share": "शेयर करना",
+        //     "version": "संस्करण",
+        //     "dev": "डेवलपर"
+        //     },
+        // 'ml':{
+        //     "lang": "ഇംഗ്ലീഷ്",
+        //     "title": "Flames",
+        //     "subtitle": "തമാശയുള്ള!",
+        //     "bname": "ആൺകുട്ടിയുടെ പേര്",
+        //     "bnamePlc": "ആൺകുട്ടിയുടെ പേര് നൽകുക..",
+        //     "gname": "പെൺകുട്ടിയുടെ പേര്",
+        //     "gnamePlc": "പെൺകുട്ടിയുടെ പേര് നൽകുക..",
+        //     "submitBtn": "പൊരുത്തം കണ്ടെത്തുക",
+        //     "goBack": "മടങ്ങിപ്പോവുക",
+        //     "error": "ദയവായി കുറഞ്ഞത് 4 പ്രതീകങ്ങൾ പരമാവധി 20 പ്രതീകങ്ങൾ നൽകുക",
+        //     "customFlames": "ഇഷ്‌ടാനുസൃത Flames",
+        //     "pageNotAvailable": "ഒരു പേജും ലഭ്യമല്ല",
+        //     "langHeader": "നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക",
+        //     "themeSelect": "നിങ്ങളുടെ തീം തിരഞ്ഞെടുക്കുക",
+        //     "history": "ചരിത്രം",
+        //     "view": "കാണുക",
+        //     "clear": "ചരിത്രം മായ്‌ക്കുക",
+        //     "noData": "ഡാറ്റയൊന്നും കണ്ടെത്തിയില്ല",
+        //     "on": "ഓൺ ചെയ്യുക",
+        //     "off": "ഓഫ് ചെയ്യുക",
+        //     "loading": "ലോഡ് ചെയ്യുന്നു...",
+        //     "theme": {
+        //         "basic": "അടിസ്ഥാനം",
+        //         "lite": "ലൈറ്റ്",
+        //         "dw": "ഡെഡ്‌പൂൾ & വോൾവറിൻ",
+        //         "sp": "സൂപ്പർമാൻ"
+        //     },
+        //     "calFlames": "Flames കണക്കാക്കുന്നു",
+        //     "download": "Flames ഇൻസ്റ്റാൾ ചെയ്യുക",
+        //     "share": "പങ്കിടുക",
+        //     "version": "പതിപ്പ്",
+        //     "dev": "ഡെവലപ്പർ"
+        //     },
         'en' : {
                 lang:'English',
                 title:"Flames",
@@ -24,9 +197,15 @@ export const constant = {
                 loading:"Loading...",
                 theme:{
                    basic:"Basic", 
-                   lite:"Lite"
+                   lite:"Lite",
+                   dw:"Deadpool & Wolverine",
+                   sp: "Superman"
                 },
-                calFlames:"Calculating flames"
+                calFlames:"Calculating flames",
+                download:'Install Flames',
+                share:'Share',
+                version:'Version',
+                dev:"Developer"
             },
             'fr' : {
                 lang:'Français',
@@ -52,9 +231,15 @@ export const constant = {
                 loading:"Chargement...",
                 theme:{
                    basic:"Basique", 
-                   lite:"Légère"
+                   lite:"Légère",
+                   dw:"Deadpool & Wolverine",
+                   sp: "Superman"
                 },
-                calFlames:"Calculating flames"
+                calFlames:"Calcul des flammes",
+                download:'Installer Flames',
+                share:'Partager',
+                version:'Version',
+                dev:"Développeur"
             },
             'span':{
                 lang:'Española',
@@ -80,9 +265,15 @@ export const constant = {
                 loading:"Cargando...",
                 theme:{
                    basic:"Básica", 
-                   lite:"Ligera"
+                   lite:"Ligera",
+                   dw: "Deadpool y Lobezno", 
+                   sp: "Superman"
                 },
-                calFlames:"Calculating flames"
+                calFlames:"Calculando llamas",
+                download:'Instalar Flames',
+                share:'Compartir',
+                version:'Versión',
+                dev:"Desarrollador"
             },
             'jpan':{
                 lang:'日本語',
@@ -108,9 +299,15 @@ export const constant = {
                 loading:"読み込み中...",
                 theme:{
                    basic:"基本", 
-                   lite:"ライト"
+                   lite:"ライト",
+                   dw:"「デッドプール＆ウルヴァリン」、",
+                   sp:"「スーパーマン」"
                 },
-                calFlames:"Calculating flames"
+                calFlames:"炎を計算する",
+                download:'Flames をインストール',
+                share:'共有',
+                version:'バージョン',
+                dev:"開発者"
             },
             'chin':{
                 lang:'中国人',
@@ -136,9 +333,15 @@ export const constant = {
                 loading:"加载中...",
                 theme:{
                    basic:"基本的", 
-                   lite:"精简版"
+                   lite:"精简版",
+                   dw:"死侍與金鋼狼",
+                   sp:"超人"
                 },
-                calFlames:"Calculating flames"
+                calFlames:"计算火焰",
+                download:'安装火焰',
+                share:'分享',
+                version:'版本',
+                dev:"开发商"
             },
             'kor':{
                 lang:'한국인',
@@ -164,9 +367,15 @@ export const constant = {
                 loading:"로드 중...",
                 theme:{
                    basic:"기초적인", 
-                   lite:"라이트"
+                   lite:"라이트",
+                   dw: "데드풀 & 울버린",
+                   sp: "슈퍼맨"
                 },
-                calFlames:"Calculating flames"
+                calFlames:"화염 계산",
+                download:'Flames 설치',
+                share:'공유',
+                version:'버전',
+                dev:"개발자"
             }
     },
     loaderImg:{
@@ -226,12 +435,104 @@ export const constant = {
         "basic": {
             background: "url('../assets/img/background.jpg')",
             primaryColor:'#DC143C',
-            secondaryColor:'white'
+            secondaryColor:'white',
+            themeflames: {
+                    "f": {
+                        background: "../assets/img/f-bg.jpg",
+                    },
+                    "l": {
+                        background: "../assets/img/l-bg.jpg",
+                    },
+                    "a": {
+                        background: "../assets/img/a-bg.jpg",
+                    },
+                    "m":{
+                        background: "../assets/img/m-bg.jpg",
+                    },
+                    "e": {
+                        background: "../assets/img/e-bg.png",
+                    },
+                    "s": {
+                        background: "../assets/img/s-bg.jpg",
+                    }
+            }
         },
         "lite": {
             background: "url('../assets/img/lite.jpg')",
             primaryColor:'#4db8b8',
-            secondaryColor:'white'
+            secondaryColor:'white',
+            themeflames: {
+                    "f": {
+                        background: "../assets/img/f-bg.jpg",
+                    },
+                    "l": {
+                        background: "../assets/img/l-bg.jpg",
+                    },
+                    "a": {
+                        background: "../assets/img/a-bg.jpg",
+                    },
+                    "m":{
+                        background: "../assets/img/m-bg.jpg",
+                    },
+                    "e": {
+                        background: "../assets/img/e-bg.png",
+                    },
+                    "s": {
+                        background: "../assets/img/s-bg.jpg",
+                    }
+            }
+        },
+        "dw":{
+            background: "url('../assets/img/dw-bg.jpg')",
+            primaryColor:'yellow',
+            secondaryColor:'rgb(254, 5, 51)',
+            flamesLoader:"../assets/img/wd-loader.gif",
+            themeflames: {
+                    "f": {
+                        background: "../assets/img/dw-f.jpg",
+                    },
+                    "l": {
+                        background: "../assets/img/dw-l.avif",
+                    },
+                    "a": {
+                        background: "../assets/img/dw-a.jpg",
+                    },
+                    "m":{
+                        background: "../assets/img/dw-m.jpeg",
+                    },
+                    "e": {
+                        background: "../assets/img/dw-e.jpg",
+                    },
+                    "s": {
+                        background: "../assets/img/dw-s.jpeg",
+                    }
+            }
+        },
+        "sp":{
+            background: "url('../assets/img/sp-bg.jpg')",
+            primaryColor:'red',
+            secondaryColor:'yellow',
+            flamesLoader:"../assets/img/sp-loader.gif",
+            themeflames: {
+                    "f": {
+                        background: "../assets/img/sp-f.jpeg",
+                    },
+                    "l": {
+                        background: "../assets/img/sp-l.avif",
+                    },
+                    "a": {
+                        background: "../assets/img/sp-a.jpeg",
+                    },
+                    "m":{
+                        background: "../assets/img/sp-m.jpeg",
+                    },
+                    "e": {
+                        background: "../assets/img/sp-e.avif",
+                    },
+                    "s": {
+                        background: "../assets/img/sp-s.jpeg",
+                    }
+            }
         },
         "f": {
             background: "url('../assets/img/f-bg.jpg')",

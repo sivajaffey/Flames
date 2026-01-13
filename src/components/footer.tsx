@@ -23,6 +23,14 @@ const Footer = (props) => {
     }
     return <>
         <div className="footer">
+            {state.page == 2 && 
+                <>
+                    <h6 style={{left: '1%', bottom: '0%', position: 'fixed'}}>
+                    <i>Version : {constant.version}</i>&nbsp;
+                    ( <a target="_blank" href="https://sivaraman.business.blog/">Developer</a> ) 
+                    </h6> 
+                </>
+            }
             {state?.page === 4 && <ButtonField style={style} click={()=>clearHistory()} text={constant.lang[state?.lang].clear} />}
             {props?.back == 'back' ? <ButtonField style={style} className='submit-btn pushable' variant="contained" click={()=>clear()} text={<span className='front'>{constant['lang'][state.lang].goBack}</span>}/> : 
             <ButtonField className='submit-btn pushable' style={style} variant="contained" click={props.submit} text={<span className='front'>{constant['lang'][state.lang].submitBtn}</span>} />}

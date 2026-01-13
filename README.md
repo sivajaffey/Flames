@@ -5,10 +5,10 @@
 this is developed using react 18 and redux. 
 deployed in android link added below
 
-# New Updates 
-- Theme changes available
-- New Languages added
-- Now you can save History
+# Updates 
+- New Theme's available
+- Set preferred language
+- Turn on History & View History
 
 # Collabration
 

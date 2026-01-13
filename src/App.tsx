@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import { setHistory, setLang, setTheme } from './config/redux/store'
 import React from 'react';
 import CustomRoute from './config/routes';
+import { Route, Routes } from 'react-router-dom';
+import Result from './pages/result';
 
 
 const App = () => {
@@ -23,7 +25,10 @@ const App = () => {
   return (
     <>
       <Container fixed>
-          <CustomRoute />
+        <Routes>
+          <Route path="/" element={<CustomRoute />} />
+          <Route path="/result/:data" element={<Result />} />
+        </Routes>
       </Container>
     </>
   )

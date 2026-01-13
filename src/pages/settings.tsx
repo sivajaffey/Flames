@@ -92,6 +92,13 @@ const Settings = (props) => {
                                 {id:0, value: constant.lang[state?.lang].off}
                             ]} value={state?.history} change={turnHistory} class={'settings-menu'}/>
                         },
+                        // {
+                        //     listItemText:true,
+                        //     primaryTitle:<>
+                        //         <span style={style}>{constant?.lang[state?.lang]?.history} </span> {vwHis.length > 0 && <span style={style} onClick={()=>dispatch(setPage(4))}>(<u >{constant?.lang[state?.lang]?.view}</u>)</span>}
+                        //     </>, 
+                        //     primaryDesc: <a target="_blank" href="https://sivaraman.business.blog/">Developer</a>
+                        // },
                     ]
                 }/>
                 <Footer back={'back'}/>

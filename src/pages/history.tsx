@@ -10,9 +10,11 @@ const History = (props) => {
     const state:any = useSelector((state)=>state);
     const [timer, setTimer] = useState(0);
     const style = {
-                // background:constant['themes'][state.theme]?.primaryColor,
                 color:constant['themes'][state.theme]?.primaryColor,
-                "border-radius":"5%",
+                background:constant['themes'][state.theme]?.secondaryColor,
+                border: `2px solid ${constant['themes'][state.theme]?.primaryColor}`,
+                padding:"1%",
+                "border-radius":"10px",
                 width:"100%"
     }
     const styleDesc = {
@@ -20,7 +22,7 @@ const History = (props) => {
         background:constant['themes'][state.theme]?.secondaryColor,
         border: `2px solid ${constant['themes'][state.theme]?.primaryColor}`,
         padding:"1%",
-        "border-radius":"10px"
+        "border-radius":"10px",
     }
 
     useEffect(()=>{

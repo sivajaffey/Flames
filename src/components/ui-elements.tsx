@@ -15,7 +15,7 @@ export const textInput = (props) => {
 }
 
 export const Content = (props) => {
-    return <Container {...props} className={props?.class}>{props?.content}</Container>
+    return <Container  {...props} style={props?.style} className={props?.class}>{props?.content}</Container>
 }
 
 export const Grid = (props) => {

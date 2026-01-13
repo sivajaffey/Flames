@@ -25,6 +25,12 @@ const counterSlice = createSlice({
       state.page = 0;
       Game = "flames";
     },
+    setUserNames:(state,action) => {
+      state.bname = action.payload.bname;
+      state.gname = action.payload.gname;
+      state.flames = action.payload.flames;
+      state.theme = action.payload.theme;
+    },
     setLang:(state,action)=>{
       state.lang = action.payload;
     },
@@ -49,7 +55,6 @@ const counterSlice = createSlice({
       }
     },
     setHistoryList: (state,action)=>{
-      // console.log(action.payload)
       state.historyList = action.payload;
     }, 
     submit: (state,action) =>{
@@ -64,7 +69,6 @@ const counterSlice = createSlice({
             array = JSON.parse(localStorage.getItem('historyData')) || []
           }
           
-          // console.log(array)
           let flameObj={
             bname:state.bname,
             gname:state.gname,
@@ -82,14 +86,17 @@ const counterSlice = createSlice({
       let b = bname?.replace(' ','');
       let g = gname?.replace(' ','');
       // remove common charectors from both
-      bname?.replace(' ','')?.split('')?.map((d,i)=>{
-          g=g.replace(bname[i],'')
-      });
-      gname?.replace(' ','').split('')?.map((d,i)=>{
-        b=b.replace(gname[i],'')
-      });
+      // bname?.replace(' ','')?.split('')?.map((d,i)=>{
+      //     g=g.replace(d,'')
+      // });
+      // gname?.replace(' ','').split('')?.map((d,i)=>{
+      //   b=b.replace(d,'')
+      // });
+      bname?.replace(/\s/g,'')?.split('').map(d => g = g.replace(d, ''));
+      gname?.replace(/\s/g,'')?.split('').map(d => b = b.replace(d, ''));
       const aftRemoval = [b,g]?.join('')?.trim();
-          const flames = (Fcount, arr, startChar) => {
+      
+          const flames = (Fcount:any, arr:any, startChar:any) => {
       
             let game = arr?.join('');
             if (arr.length == 1) {
@@ -99,12 +106,16 @@ const counterSlice = createSlice({
                 return false;
             }
 
+                // console.log(game)
                 for(let i=0; i<arr.length;i++) {
                     game += game
                 }
-
+                // game = Array(arr.length).fill(game).join('')
+                // console.log(arr.length, game)
                 if (startChar !== '') {
+                  // console.log(startChar)
                     let startIndx=game.indexOf(startChar);
+                    // console.log("slice :",startIndx)
                     game=game.slice(startIndx);
                 }
                 let nextChar = game.charAt(Fcount);
@@ -157,16 +168,8 @@ const counterSlice = createSlice({
   }
 })
 
-export const { submit, setLang, setFlames, clearData, setTheme, setPage, setHistory, setHistoryList, showLoader } = counterSlice.actions
+export const { setUserNames, submit, setLang, setFlames, clearData, setTheme, setPage, setHistory, setHistoryList, showLoader } = counterSlice.actions
 
 export const store = configureStore({
   reducer: counterSlice.reducer
 })
-
-
-// Can still subscribe to the store
-// export let state: { bname: string; gname: string; };
-// store.subscribe(() => {
-//     console.log(store.getState())
-//     state = store.getState();
-// })

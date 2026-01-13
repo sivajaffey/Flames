@@ -14,7 +14,7 @@ const Home = () => {
   const style = {
           background: constant['themes'][state?.theme]?.primaryColor,
           color:constant['themes'][state?.theme]?.secondaryColor,
-          "padding-bottom": "5%",
+          "padding-bottom": "15%",
           "padding-top": "1%",
           "border-radius":"5%"
       }
@@ -42,6 +42,11 @@ const Home = () => {
 
   const submitNames = (e) => {
     clickSound();
+    // console.log("MAx: "+(e?.gname?.trim().length + e?.bname?.trim()?.length))
+    // if ( (e?.gname?.trim().length + e?.bname?.trim()?.length) > 30) {
+    //   alert(constant['lang'][state.lang].error)
+    //   return false
+    // }
     if (e?.gname?.trim().length > 4 && e?.gname?.trim()?.length < 21 && 
     e?.gname?.trim()?.length > 4 && e?.gname?.trim()?.length) {
             if (e.gname?.trim() !== '' && e.bname?.trim() !== '') {
@@ -50,7 +55,7 @@ const Home = () => {
               const submitFlames = (e) => {
                 dispatch(submit({'gname':e.gname?.trim(),'bname':e.bname?.trim()}));
               }
-              dispatch(showLoader({show:true, title: `${constant.lang[state.lang].calFlames}`, message: `${e.bname} & ${e.gname}`, image:constant?.loaderImg?.flamesLoader})) // loader function start
+              dispatch(showLoader({show:true, title: `${constant.lang[state.lang].calFlames}`, message: `${e.bname} & ${e.gname}`, image: (constant['themes'][state?.theme]?.flamesLoader) ? constant['themes'][state?.theme]?.flamesLoader : constant?.loaderImg?.flamesLoader})) // loader function start
               setTimeout(()=>{
                 dispatch(showLoader({show:false, title: '', message: '', image: ''})) // loader function stop
                 submitFlames(e)
