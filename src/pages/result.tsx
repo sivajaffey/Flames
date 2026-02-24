@@ -31,10 +31,10 @@ const Result = (props) => {
     const openWebPage = (param:string) => {
         let {gname, bname, flames, theme} = state
         let data = btoa(JSON.stringify({bname:bname, gname:gname, flames:flames, theme: theme}))
-        window.open((param == '0') ? `https://${constant.webAppUrl}/result/${data}` : `https://play.google.com/store/apps/details?id=com.sr.flamesapp`,"_blank")
+        window.open((param == '0') ? `https://${constant.webAppUrl}/#/${data}` : `https://play.google.com/store/apps/details?id=com.sr.flamesapp`,"_blank")
     }
     useEffect(()=>{
-        console.log(data)
+        // console.log(data)
         if (data) {
             let param = JSON.parse(atob(data));
             if (param?.gname && param?.bname && param?.flames && param?.theme) {
