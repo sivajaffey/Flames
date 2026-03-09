@@ -20,7 +20,7 @@ const Router = [
 
 return <>
   {state.screenLoader?.show && <Loader className={'loader-screen'} {...state.screenLoader} />}
-  <Header />
+  <Header/>
    {Router.filter(route=>route.id === state?.page).length > 0 ? Router.filter(route=>route.id === state?.page)[0].component : 'No Page Found'}
  </>
 }

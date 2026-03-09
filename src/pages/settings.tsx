@@ -68,7 +68,7 @@ const Settings = (props) => {
     const viewPage = ()=> {
         return <>
          {timer === 1 &&
-            <Content content={
+            <Content className={'settings-page'} content={
                 <>
                 <ListItems class={'settings-list'} list={
                     [
@@ -105,7 +105,7 @@ const Settings = (props) => {
                 </>
             } />
         }
-        {timer === 0 && <div style={{color: style.color}}>
+        {timer === 0 && <div style={{color: style.color, "display":"flex", "justify-content":"center", "align-items":"center", height: "75%", top:"15%", position: "absolute"}}>
             {constant?.lang[state?.lang]?.loading}
         </div>}
         </>

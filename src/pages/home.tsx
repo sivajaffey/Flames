@@ -14,13 +14,14 @@ const Home = () => {
   const style = {
           background: constant['themes'][state?.theme]?.primaryColor,
           color:constant['themes'][state?.theme]?.secondaryColor,
-          "padding-bottom": "15%",
+          "padding-bottom": "2%",
           "padding-top": "1%",
-          "border-radius":"5%"
+          // "padding-left":"5%",
+          "border-radius":"2%"
       }
   const form = [
     {
-        sectionHeader:"Flames",
+        // sectionHeader:"Flames",
         class:"flames-form",
         fields:[
             {
@@ -70,9 +71,9 @@ const Home = () => {
     return <>
         <Content class={'home-page'} content={
             <>
-            <Form style={style} formfields={form} formData={(e)=>setFormValues(e)}/>
-            <Footer submit={()=>submitNames(formValue)}/>
-        </>
+              <Form class={'insert-form'} style={style} formfields={form} formData={(e)=>setFormValues(e)}/>
+              <Footer class={'insert-form-footer'} submit={()=>submitNames(formValue)}/>
+             </>
         }/>
       </>
 }

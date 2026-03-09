@@ -9,9 +9,10 @@ const Footer = (props) => {
     const state:any = useSelector(state=>state);
     const dispatch = useDispatch();
     const style = {
-        background:constant['themes'][state.theme]?.primaryColor,
-        color:constant['themes'][state.theme]?.secondaryColor,
-        margin:"2px"
+        background:constant['themes'][state.theme]?.secondaryColor,
+        color:constant['themes'][state.theme]?.primaryColor,
+        margin:"2px",
+        width: "100%"
     }
     const clear = () => {
         clickSound();
@@ -25,7 +26,7 @@ const Footer = (props) => {
         <div className="footer">
             {state.page == 2 && 
                 <>
-                    <h6 style={{left: '1%', bottom: '0%', position: 'fixed'}}>
+                    <h6 style={{ bottom: '0%', position: 'fixed', background: style.background, color: style.color, "border-radius": "5%" }}>
                     <i>Version : {constant.version}</i>&nbsp;
                     ( <a target="_blank" href="https://sivaraman.business.blog/">Developer</a> ) 
                     </h6> 

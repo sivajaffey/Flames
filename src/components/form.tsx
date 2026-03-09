@@ -8,9 +8,9 @@ const Form = (props) => {
         return <>
             
             <Content {...props} content={
-                <><H1 text={section?.sectionHeader} {...section}/>
+                <><H1 text={section?.sectionHeader} />
                 {section?.fields?.map(data=>{
-                    return <Grid container {...section} content={
+                    return <Grid container content={
                                 <Grid {...data} item content={
                                     fieldInputs(data)
                                 }/>
@@ -49,7 +49,7 @@ const Form = (props) => {
     return <>
         <Content  {...props} content={
             <>
-                {props?.formfields.map(section=>{
+                {props?.formfields.map((section: any)=>{
                     return wrapper(section)
                 })}
             </>

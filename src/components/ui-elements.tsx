@@ -94,10 +94,10 @@ export const Loader = (props) => {
                 image={props?.image}
             />
             </Typography>}
-            {props?.title && <Typography style={{color: constant.themes[state?.theme]?.secondaryColor}} className='blink'  textAlign='center' gutterBottom variant="h4" component="div">
+            {props?.title && <Typography style={{  padding: "5%", "border-radius": "3%", background: constant.themes[state?.theme]?.secondaryColor, color: constant.themes[state?.theme]?.primaryColor}}  textAlign='center' gutterBottom variant="h4" component="div">
             {props?.title}
             </Typography>}
-            {props?.message && <Typography style={{color: constant.themes[state?.theme]?.primaryColor, fontStyle:'italic'}} textAlign='center' gutterBottom variant="h5" component="div">
+            {props?.message && <Typography style={{ padding: "5%", "border-radius": "3%", background: constant.themes[state?.theme]?.secondaryColor, color: constant.themes[state?.theme]?.primaryColor, fontStyle:'italic'}} className='blink' textAlign='center' gutterBottom variant="h5" component="div">
             {props?.message}
             </Typography>}
             </CardContent>

@@ -20,13 +20,21 @@ const Result = (props) => {
     const styleVisitBtn = {
         'text-align': 'center',
         'justify-self': 'anchor-center',
-        'position': 'absolute',
+        // 'position': 'absolute',
+        background:constant['themes'][state.theme]?.secondaryColor,
+        color:constant['themes'][state.theme]?.primaryColor,
     }
      const style = {
                 background:constant['themes'][state.theme]?.primaryColor,
                 color:constant['themes'][state.theme]?.secondaryColor,
                 "border-radius":"5%",
-                "padding-bottom": "10%",
+                // "padding-bottom": "10%",
+                display: "grid",
+                top: "14%",
+                // display: "block",
+                height: "75%",
+                width: "98%",
+                "justify-items": "center"
             }
     const openWebPage = (param:string) => {
         let {gname, bname, flames, theme} = state
@@ -62,7 +70,7 @@ const Result = (props) => {
                     borderRadius: '50%', 
                     position: 'relative'}}/> 
                 {getLocation.pathname == '/' && <Footer back={'back'}/>}
-             {getLocation.pathname == '/' &&  <div>
+             {getLocation.pathname == '/' &&  <div className="share-options">
                 <ButtonField click={()=>openWebPage('0')} style={styleVisitBtn} variant="contained" text={<span className='front'>{constant['lang'][state.lang]?.share}</span>} />
             </div> }
             </>

@@ -10,12 +10,15 @@ const Header = () => {
     const style = {
             background:constant['themes'][state.theme]?.primaryColor,
             color:constant['themes'][state.theme]?.secondaryColor,
+            width: "100%",
+            height: "100%",
+            "box-shadow": "-1px 2px 30px "+ constant['themes'][state.theme]?.primaryColor
         }
     const dispatch = useDispatch();
     useEffect(()=>{
         
     },[])
-    return  <NavBar content={ 
+    return  <NavBar class={'app-header'} content={ 
             <NavToolBar style={style} content={<>
                 <img src={constant.logo} height={50} width={50} style={{'padding-right':'2%'}} />
                 <H1 text={constant['lang'][state.lang].title}/>
