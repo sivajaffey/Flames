@@ -27,10 +27,10 @@ code {
 }
 .css-5c1adp-MuiContainer-root {
   /* settings page */
-    position: absolute;
+    position: fixed;
     width: 98%;
     display: flow;
-    top: 2%;
+    top: 16%;
     /* .footer {
 
     } */

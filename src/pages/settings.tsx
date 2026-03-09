@@ -105,7 +105,7 @@ const Settings = (props) => {
                 </>
             } />
         }
-        {timer === 0 && <div style={{color: style.color, "display":"flex", "justify-content":"center", "align-items":"center", height: "75%", top:"15%", position: "absolute"}}>
+        {timer === 0 && <div style={{color: style.color, "display":"flex", "justify-content":"center", "align-items":"center", height: "75%", top:"15%", position: "fixed"}}>
             {constant?.lang[state?.lang]?.loading}
         </div>}
         </>
