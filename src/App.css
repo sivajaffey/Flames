@@ -40,15 +40,29 @@
   font-family: monospace !important;
 }
 #root {
-    height: 75%;
+    /* height: 75%;
     width: 80%;
     position: fixed;
     top: 16%;
-    /* padding: 5%;
-    margin: 5%; */
+    text-align: center; */
+
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /* top: 16%; */
     text-align: center;
+    display: flex;
+    justify-content: center;
 
 }
+ .MuiContainer-root{
+  width: 85% !important;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+ }
 .css-1dgpa8w-MuiContainer-root {
   /* height: 100%; */
   display: flex;
