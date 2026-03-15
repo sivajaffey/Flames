@@ -1,5 +1,5 @@
 export const constant = {
-    version:'1.0.5',
+    version:'1.0.6',
     logo:'../assets/img/logo.png',
     webAppUrl:'flames-web.netlify.app',
     lang: {
@@ -205,7 +205,8 @@ export const constant = {
                 download:'Install Flames',
                 share:'Share',
                 version:'Version',
-                dev:"Developer"
+                dev:"Developer",
+                officialWeb: "Our Page"
             },
             'fr' : {
                 lang:'Français',
@@ -239,7 +240,8 @@ export const constant = {
                 download:'Installer Flames',
                 share:'Partager',
                 version:'Version',
-                dev:"Développeur"
+                dev:"Développeur",
+                officialWeb: "Notre page"
             },
             'span':{
                 lang:'Española',
@@ -273,7 +275,8 @@ export const constant = {
                 download:'Instalar Flames',
                 share:'Compartir',
                 version:'Versión',
-                dev:"Desarrollador"
+                dev:"Desarrollador",
+                officialWeb: "Nuestra pagina"
             },
             'jpan':{
                 lang:'日本語',
@@ -307,7 +310,8 @@ export const constant = {
                 download:'Flames をインストール',
                 share:'共有',
                 version:'バージョン',
-                dev:"開発者"
+                dev:"開発者",
+                officialWeb: "私たちのページ"
             },
             'chin':{
                 lang:'中国人',
@@ -341,7 +345,8 @@ export const constant = {
                 download:'安装火焰',
                 share:'分享',
                 version:'版本',
-                dev:"开发商"
+                dev:"开发商",
+                officialWeb: "我们的页面"
             },
             'kor':{
                 lang:'한국인',
@@ -375,7 +380,8 @@ export const constant = {
                 download:'Flames 설치',
                 share:'공유',
                 version:'버전',
-                dev:"개발자"
+                dev:"개발자",
+                officialWeb: "우리 페이지"
             }
     },
     loaderImg:{

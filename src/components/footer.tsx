@@ -23,12 +23,12 @@ const Footer = (props) => {
         clear()
     }
     return <>
-        <div className="footer">
+        <div className={`footer ${(props.class) ? props.class: ''}`} >
             {state.page == 2 && 
                 <>
                     <h6 style={{ bottom: '0%', position: 'fixed', background: style.background, color: style.color, "border-radius": "5%" }}>
-                    <i>Version : {constant.version}</i>&nbsp;
-                    ( <a target="_blank" href="https://sivaraman.business.blog/">Developer</a> ) 
+                    <i>{constant['lang'][state.lang].version} : {constant.version}</i>&nbsp;
+                    ( <a target="_blank" href="https://sivaraman.business.blog/flames">{constant['lang'][state.lang].officialWeb}</a> | <a target="_blank" href="https://sivaraman.business.blog/">{constant['lang'][state.lang].dev}</a> ) 
                     </h6> 
                 </>
             }

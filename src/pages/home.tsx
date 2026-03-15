@@ -7,10 +7,14 @@ import { Content } from "../components/ui-elements";
 import React from 'react';
 import Form from "../components/form";
 import Footer from "../components/footer";
+import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
+
 const Home = () => {
   const dispatch = useDispatch();
   const state:any = useSelector((state)=>state);
   const [formValue, setFormValues] = useState();
+  const [open, setOpen] = React.useState(false);
+  const [msg, setMsg] = React.useState(false);
   const style = {
           background: constant['themes'][state?.theme]?.primaryColor,
           color:constant['themes'][state?.theme]?.secondaryColor,
@@ -63,16 +67,40 @@ const Home = () => {
               },5000)
             }
     } else {
-      alert(constant['lang'][state.lang].error)
+      // alert(constant['lang'][state.lang].error)
+      setMsg(constant['lang'][state.lang].error);
+      handleClick();
       return false
     }
   }
-  
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: SnackbarCloseReason,
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
     return <>
         <Content class={'home-page'} content={
             <>
               <Form class={'insert-form'} style={style} formfields={form} formData={(e)=>setFormValues(e)}/>
               <Footer class={'insert-form-footer'} submit={()=>submitNames(formValue)}/>
+                <Snackbar
+                  style={{top:"18%"}} //, background:constant['themes'][state?.theme]?.primaryColor, color:constant['themes'][state?.theme]?.secondaryColor
+                  open={open}
+                  anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                  // horizontal={'center'}
+                  autoHideDuration={1200}
+                  onClose={handleClose}
+                  message={msg}
+                />
              </>
         }/>
       </>

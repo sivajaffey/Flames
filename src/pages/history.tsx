@@ -47,9 +47,9 @@ const History = (props) => {
          {timer === 1 &&
             <Content content={
                 <>
-                {listArr?.length > 0 && <ListItems class={'settings-list'} list={listArr}/>}
+                {listArr?.length > 0 && <ListItems class={'history-list'} list={listArr}/>}
                 {listArr?.length === 0 && `${constant.lang[state?.lang].noData}`}
-                <Footer back={'back'}/>
+                <Footer class={'history-footer'} back={'back'}/>
                 </>
             } />
         }

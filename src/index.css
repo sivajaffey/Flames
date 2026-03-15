@@ -31,9 +31,37 @@ code {
     width: 98%;
     display: flow;
     top: 16%;
+    height: 80%;
     /* .footer {
 
     } */
+}
+.history-list {
+  left: 0 !important;
+    /* overflow-y: scroll !important; */
+    /* display: -webkit-box; */
+    height: 70% !important;
+    /* width: 100%; */
+    top: 16%;
+    position: fixed !important;
+    overflow-y: scroll;
+    width: 100%;
+  /* top: 12%; */
+  span {
+    font-weight: bold;
+  }
+  
+  .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    font-weight: bold;
+  }
+}
+.history-footer {
+  bottom: 5%;
+    position: fixed;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .settings-list {
   left: 0;
