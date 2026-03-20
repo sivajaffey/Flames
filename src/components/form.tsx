@@ -1,51 +1,59 @@
-import { submit } from '../redux-configs/store';
-import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
-import { constant, clickSound } from '../redux-configs/constant';
-import TextField from '@mui/material/TextField';
-import Container from '@mui/material/Container';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import Grid from '@mui/material/Grid';
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { Content, Grid, H1 } from "./ui-elements";
+import { ButtonField, TextInput } from "./form-inputs";
 
-const Form = () => {
-  const [bname, setBname] = useState('');
-  const [gname, setGname] = useState('');
-  const dispatch = useDispatch();
-  const state:any = useSelector(state=>state);
-  const submitNames = () => {
-    clickSound();
-    if (gname.trim().length > 4 && gname.trim().length < 21 && 
-          gname.trim().length > 4 && gname.trim().length) {
-            if (gname?.trim() !== '' && bname?.trim() !== '') {
-              // let gname1 = gname?.replace(/[&\/\\#, +()$~%.@!%^&*_+='":*?<>{}]/g, '');
-              // let bname1 = bname?.replace(/[&\/\\#, +()$~%.@!%^&*_+='":*?<>{}]/g, '');
-              // console.log(gname1,bname1)
-              dispatch(submit({'gname':gname?.trim(),'bname':bname?.trim()}));
-            }
-    } else {
-      alert(constant['lang'][state.lang].error)
+const Form = (props) => {
+    const [formValues, setFormValues] = useState({})
+    const wrapper = (section) => {
+        return <>
+            
+            <Content {...props} content={
+                <><H1 text={section?.sectionHeader} />
+                {section?.fields?.map(data=>{
+                    return <Grid container content={
+                                <Grid {...data} item content={
+                                    fieldInputs(data)
+                                }/>
+                            }/>
+                })}</>
+        }  class={section?.class}/> 
+        </>
     }
-  }
-    return (
-      <>
-        <Container fixed className='content'>
-            <Header/>
-            <Grid container spacing={1}>
-              <Grid item xs={12}>
-              <h3>{constant['lang'][state.lang].subtitle}</h3>
-              </Grid>
-              <Grid item xs={12}>
-                <TextField autoComplete='off' id="outlined-basic" label={constant['lang'][state.lang].bname} variant="outlined"  type='text' placeholder={constant['lang'][state.lang].bnamePlc} onKeyUp={(e)=> setBname(e.target?.value)}/>
-              </Grid>
-              <Grid item xs={12}>
-                <TextField autoComplete='off' id="outlined-basic" label={constant['lang'][state.lang].gname} variant="outlined"  type='text' placeholder={constant['lang'][state.lang].gnamePlc} onKeyUp={(e)=> setGname(e.target?.value)}/>
-              </Grid>
-            </Grid>
-          <Footer submit={()=>submitNames()} inputs={{'gname':gname, 'bname':bname}}/>
-        </Container>
-      </>
-    )
-  }
-  
-  export default Form
+
+    const formSubmitBtn = (input) =>{
+        input.click(formValues)
+    }
+    const setFormData = () => {
+        props.formData(formValues)
+    }
+    useEffect(()=>{// console.log(formValues)
+        props?.formData(formValues)
+    },[formValues])
+    const fieldInputs = (input) => {
+        switch(input?.type) {
+            case "text":
+                return <TextInput {...input} class={input?.class} type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=> setFormValues({...formValues, [input?.name]: e?.target?.value }) }/>
+            break;
+            case "button":
+                return <ButtonField {...input} class={input?.class} text={input?.value} click={()=>input?.click}/>
+            break;
+            case "submit":
+                return <ButtonField {...input} class={input?.class} text={input?.value} click={()=>formSubmitBtn(input)}/>
+            break;
+            default:
+                return <TextInput {...input} class={input?.class} type={input?.type} placeholder={input?.placeholder} label={input?.label} change={(e)=>
+                    setFormValues({...formValues, [input?.name]: e?.target?.value })
+                }/>
+        }
+    }
+    return <>
+        <Content  {...props} content={
+            <>
+                {props?.formfields.map((section: any)=>{
+                    return wrapper(section)
+                })}
+            </>
+        } class={props.class}/>
+    </>
+}
+export default Form;

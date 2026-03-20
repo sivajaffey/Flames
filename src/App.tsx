@@ -1,25 +1,37 @@
-import './App.css'
-import Form from './components/form'
-import Result from './components/result'
+import './App.css';
+
+
  import { useSelector, useDispatch } from 'react-redux';
  import Container from '@mui/material/Container';
 import { useEffect } from 'react';
-import { setTheme } from './redux-configs/store'
-function App() {
-const state:any = useSelector((state)=>state);
-const dispatch = useDispatch();
+import { setHistory, setLang, setTheme } from './config/redux/store'
+import React from 'react';
+import CustomRoute from './config/routes';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Result from './pages/result';
+
+
+const App = () => {
+  const state:any = useSelector((state)=>state);
+  const dispatch = useDispatch();
+  // const location = useLocation();
   useEffect(()=>{
-    // console.log(state)
-    dispatch(setTheme(state.flames))
-  },[state.flames])
+    dispatch(setLang((localStorage.getItem('lang')) ? localStorage.getItem('lang') : state?.lang))
+    dispatch(setTheme((localStorage.getItem('theme')) ? localStorage.getItem('theme') : state?.theme))
+    dispatch(setHistory((localStorage.getItem('history')) ? Number(localStorage.getItem('history')) : state?.history))
+    // console.log(location)
+  },[])
+
   return (
     <>
       <Container fixed>
-          {(state.page == 0) && <Form className="Form"/>}
-          {(state.page == 1) && <Result className="Form"/>}
+        <Routes>
+          <Route path="/" element={<CustomRoute />} />
+          <Route path="/:data" element={<Result />} />
+        </Routes>
       </Container>
     </>
   )
 }
 
-export default App
+export default App;
